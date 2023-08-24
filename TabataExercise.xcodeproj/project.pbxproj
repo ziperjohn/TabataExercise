@@ -11,6 +11,13 @@
 		1E18FE262A96506B0061A9F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE252A96506B0061A9F5 /* ContentView.swift */; };
 		1E18FE282A96506C0061A9F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E18FE272A96506C0061A9F5 /* Assets.xcassets */; };
 		1E18FE2B2A96506C0061A9F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E18FE2A2A96506C0061A9F5 /* Preview Assets.xcassets */; };
+		1E18FE3A2A9652E30061A9F5 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE392A9652E30061A9F5 /* SignInScreen.swift */; };
+		1E18FE3C2A96530B0061A9F5 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE3B2A96530B0061A9F5 /* SignUpScreen.swift */; };
+		1E18FE3E2A96532D0061A9F5 /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE3D2A96532D0061A9F5 /* ForgotPasswordScreen.swift */; };
+		1E18FE412A9655C00061A9F5 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE402A9655C00061A9F5 /* PrimaryButton.swift */; };
+		1E18FE432A965DA80061A9F5 /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE422A965DA80061A9F5 /* TextInput.swift */; };
+		1E18FE452A9668980061A9F5 /* AuthTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE442A9668980061A9F5 /* AuthTitle.swift */; };
+		1E18FE4A2A966E700061A9F5 /* FotterNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE492A966E700061A9F5 /* FotterNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		1E18FE252A96506B0061A9F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1E18FE272A96506C0061A9F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E18FE2A2A96506C0061A9F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1E18FE392A9652E30061A9F5 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
+		1E18FE3B2A96530B0061A9F5 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		1E18FE3D2A96532D0061A9F5 /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
+		1E18FE402A9655C00061A9F5 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		1E18FE422A965DA80061A9F5 /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
+		1E18FE442A9668980061A9F5 /* AuthTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTitle.swift; sourceTree = "<group>"; };
+		1E18FE492A966E700061A9F5 /* FotterNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotterNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,10 @@
 		1E18FE222A96506B0061A9F5 /* TabataExercise */ = {
 			isa = PBXGroup;
 			children = (
-				1E18FE232A96506B0061A9F5 /* TabataExerciseApp.swift */,
-				1E18FE252A96506B0061A9F5 /* ContentView.swift */,
+				1E18FE3F2A9655AB0061A9F5 /* Components */,
+				1E18FE312A96521A0061A9F5 /* App */,
+				1E18FE332A9652350061A9F5 /* Utils */,
+				1E18FE322A9652270061A9F5 /* Modules */,
 				1E18FE272A96506C0061A9F5 /* Assets.xcassets */,
 				1E18FE292A96506C0061A9F5 /* Preview Content */,
 			);
@@ -65,6 +81,91 @@
 				1E18FE2A2A96506C0061A9F5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1E18FE312A96521A0061A9F5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1E18FE232A96506B0061A9F5 /* TabataExerciseApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1E18FE322A9652270061A9F5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1E18FE352A96525F0061A9F5 /* Auth */,
+				1E18FE342A9652550061A9F5 /* Root */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1E18FE332A9652350061A9F5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1E18FE342A9652550061A9F5 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1E18FE252A96506B0061A9F5 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		1E18FE352A96525F0061A9F5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1E18FE462A9669710061A9F5 /* Components */,
+				1E18FE382A9652740061A9F5 /* ViewStates */,
+				1E18FE372A96526F0061A9F5 /* Screens */,
+				1E18FE362A9652690061A9F5 /* Models */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1E18FE362A9652690061A9F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E18FE372A96526F0061A9F5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1E18FE392A9652E30061A9F5 /* SignInScreen.swift */,
+				1E18FE3B2A96530B0061A9F5 /* SignUpScreen.swift */,
+				1E18FE3D2A96532D0061A9F5 /* ForgotPasswordScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1E18FE382A9652740061A9F5 /* ViewStates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewStates;
+			sourceTree = "<group>";
+		};
+		1E18FE3F2A9655AB0061A9F5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1E18FE402A9655C00061A9F5 /* PrimaryButton.swift */,
+				1E18FE422A965DA80061A9F5 /* TextInput.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1E18FE462A9669710061A9F5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1E18FE442A9668980061A9F5 /* AuthTitle.swift */,
+				1E18FE492A966E700061A9F5 /* FotterNavigation.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E18FE412A9655C00061A9F5 /* PrimaryButton.swift in Sources */,
 				1E18FE262A96506B0061A9F5 /* ContentView.swift in Sources */,
+				1E18FE3E2A96532D0061A9F5 /* ForgotPasswordScreen.swift in Sources */,
+				1E18FE4A2A966E700061A9F5 /* FotterNavigation.swift in Sources */,
 				1E18FE242A96506B0061A9F5 /* TabataExerciseApp.swift in Sources */,
+				1E18FE3A2A9652E30061A9F5 /* SignInScreen.swift in Sources */,
+				1E18FE3C2A96530B0061A9F5 /* SignUpScreen.swift in Sources */,
+				1E18FE452A9668980061A9F5 /* AuthTitle.swift in Sources */,
+				1E18FE432A965DA80061A9F5 /* TextInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
