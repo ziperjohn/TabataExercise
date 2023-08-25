@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authViewState: AuthViewState
+
     var body: some View {
-        SignInScreen()
+        Group {
+            if authViewState.userSession != nil {
+                ProfileScreen()
+            } else {
+                SignInScreen()
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(AuthViewState())
     }
 }

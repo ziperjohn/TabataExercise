@@ -13,7 +13,6 @@ struct TextInput: View {
     let placeHolder: String
     let icon: Image
     var isSecureField = false
-    var showForgotButton = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -35,15 +34,6 @@ struct TextInput: View {
                     TextField(placeHolder, text: $text)
                         .font(.headline)
                         .accentColor(.yellow)
-                }
-
-                if showForgotButton {
-                    NavigationLink(destination: ForgotPasswordScreen()) {
-                        Text("FORGOT")
-                            .font(.footnote)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.orange)
-                    }
                 }
             }
             .padding()
