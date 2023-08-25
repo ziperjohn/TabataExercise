@@ -11,12 +11,14 @@ struct ProfileScreen: View {
     @EnvironmentObject var authViewState: AuthViewState
 
     var body: some View {
-        if let user = authViewState.currentUser {
-            Text("\(user.nickname)")
-            Text("\(user.email)")
+        VStack {
+            if let user = authViewState.currentUser {
+                Text("\(user.nickname)")
+                Text("\(user.email)")
 
-            PrimaryButton(text: "SIGN OUT", icon: Image(systemName: "arrow.right"), action: { authViewState.signOut() }, isDisabled: false)
-            PrimaryButton(text: "DELETE USER", icon: Image(systemName: "xmark.bin"), action: { authViewState.deleteUser() }, isDisabled: false)
+                PrimaryButton(text: "SIGN OUT", icon: Image(systemName: "arrow.right"), action: { authViewState.signOut() }, isDisabled: false)
+                PrimaryButton(text: "DELETE USER", icon: Image(systemName: "xmark.bin"), action: { authViewState.deleteUser() }, isDisabled: false)
+            }
         }
     }
 }

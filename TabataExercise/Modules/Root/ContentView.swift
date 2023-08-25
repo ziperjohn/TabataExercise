@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if authViewState.userSession != nil {
-                ProfileScreen()
+                TabViewWrapper()
             } else {
                 SignInScreen()
             }

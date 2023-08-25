@@ -27,6 +27,9 @@
 		1E304E092A97D50100993394 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E304E082A97D50100993394 /* Log.swift */; };
 		1E304E0B2A97D94500993394 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E304E0A2A97D94500993394 /* User.swift */; };
 		1E304E0F2A97DDFD00993394 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E304E0E2A97DDFD00993394 /* ProfileScreen.swift */; };
+		1E304E122A98911800993394 /* TabViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E304E112A98911800993394 /* TabViewWrapper.swift */; };
+		1E304E162A98947E00993394 /* TabataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E304E152A98947E00993394 /* TabataScreen.swift */; };
+		1E304E1D2A98959400993394 /* TabataSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E304E1C2A98959400993394 /* TabataSettingsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		1E304E082A97D50100993394 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		1E304E0A2A97D94500993394 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1E304E0E2A97DDFD00993394 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		1E304E112A98911800993394 /* TabViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewWrapper.swift; sourceTree = "<group>"; };
+		1E304E152A98947E00993394 /* TabataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataScreen.swift; sourceTree = "<group>"; };
+		1E304E1C2A98959400993394 /* TabataSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataSettingsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,8 @@
 		1E18FE322A9652270061A9F5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1E304E132A98945600993394 /* Tabata */,
+				1E304E102A9890E500993394 /* TabViewWrapper */,
 				1E304E0C2A97DDD200993394 /* Profile */,
 				1E18FE352A96525F0061A9F5 /* Auth */,
 				1E18FE342A9652550061A9F5 /* Root */,
@@ -194,6 +202,8 @@
 		1E304E0C2A97DDD200993394 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				1E304E1A2A9894FF00993394 /* Models */,
+				1E304E192A9894EE00993394 /* Components */,
 				1E304E0D2A97DDE800993394 /* Screens */,
 			);
 			path = Profile;
@@ -205,6 +215,69 @@
 				1E304E0E2A97DDFD00993394 /* ProfileScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		1E304E102A9890E500993394 /* TabViewWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				1E304E112A98911800993394 /* TabViewWrapper.swift */,
+			);
+			path = TabViewWrapper;
+			sourceTree = "<group>";
+		};
+		1E304E132A98945600993394 /* Tabata */ = {
+			isa = PBXGroup;
+			children = (
+				1E304E1E2A98986500993394 /* ViewState */,
+				1E304E182A9894DA00993394 /* Components */,
+				1E304E172A9894D300993394 /* Models */,
+				1E304E142A98946D00993394 /* Screens */,
+			);
+			path = Tabata;
+			sourceTree = "<group>";
+		};
+		1E304E142A98946D00993394 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1E304E152A98947E00993394 /* TabataScreen.swift */,
+				1E304E1C2A98959400993394 /* TabataSettingsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1E304E172A9894D300993394 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E304E182A9894DA00993394 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1E304E192A9894EE00993394 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1E304E1A2A9894FF00993394 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E304E1E2A98986500993394 /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,15 +363,18 @@
 				1E18FE412A9655C00061A9F5 /* PrimaryButton.swift in Sources */,
 				1E18FE262A96506B0061A9F5 /* ContentView.swift in Sources */,
 				1E304E092A97D50100993394 /* Log.swift in Sources */,
+				1E304E1D2A98959400993394 /* TabataSettingsScreen.swift in Sources */,
 				1E18FE3E2A96532D0061A9F5 /* ForgotPasswordScreen.swift in Sources */,
 				1E304E0F2A97DDFD00993394 /* ProfileScreen.swift in Sources */,
 				1E18FE4A2A966E700061A9F5 /* FotterNavigation.swift in Sources */,
 				1E18FE242A96506B0061A9F5 /* TabataExerciseApp.swift in Sources */,
 				1E18FE3A2A9652E30061A9F5 /* SignInScreen.swift in Sources */,
 				1E2800AC2A97800000D302F9 /* AuthViewState.swift in Sources */,
+				1E304E122A98911800993394 /* TabViewWrapper.swift in Sources */,
 				1E304E0B2A97D94500993394 /* User.swift in Sources */,
 				1E18FE3C2A96530B0061A9F5 /* SignUpScreen.swift in Sources */,
 				1E18FE452A9668980061A9F5 /* AuthTitle.swift in Sources */,
+				1E304E162A98947E00993394 /* TabataScreen.swift in Sources */,
 				1E18FE432A965DA80061A9F5 /* TextInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
