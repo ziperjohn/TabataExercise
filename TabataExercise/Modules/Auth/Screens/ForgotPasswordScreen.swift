@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ForgotPasswordScreen: View {
-    @State private var email = ""
-
-    @EnvironmentObject var authViewState: AuthViewState
+    let state = ForgotPasswordStateView()
 
     var body: some View {
         VStack(spacing: 25) {
@@ -22,7 +20,7 @@ struct ForgotPasswordScreen: View {
 
             // Text inputs
 
-            TextInput(text: $email, title: "Email", placeHolder: "name@example.com", icon: Image(systemName: "envelope"))
+            TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: Image(systemName: "envelope"))
                 .autocapitalization(.none)
 
             // Reset password button
@@ -31,25 +29,23 @@ struct ForgotPasswordScreen: View {
                 Spacer()
                 PrimaryButton(text: "Reset password",
                               icon: Image(systemName: "arrow.right"),
-                              action: { Task { try await authViewState.resetPassword(withEmail: email) } },
-                              isDisabled: false)
+                              action: { Task { try await state.resetPassword() } },
+                              isDisabled: !formIsValid)
             }.padding(.horizontal)
+
+            Spacer()
 
             // Message
 
-            if let message = authViewState.message {
-                Text(message)
-                    .foregroundColor(.green)
+            if let message = state.message {
+                AlertMessage(text: message, color: .green)
             }
 
             // Error message
 
-            if let error = authViewState.errorMessage {
-                Text(error)
-                    .foregroundColor(.red)
+            if let error = state.errorMessage {
+                AlertMessage(text: error, color: .red)
             }
-
-            Spacer()
         }
     }
 }
@@ -57,6 +53,14 @@ struct ForgotPasswordScreen: View {
 struct ForgotPasswordScreen_Previews: PreviewProvider {
     static var previews: some View {
         ForgotPasswordScreen()
-            .environmentObject(AuthViewState())
+            .environmentObject(UserObservableObject(authService: AuthService(), firestoreService: FirestoreService()))
+    }
+}
+
+// MARK: - AuthenticationFormProtocol
+
+extension ForgotPasswordScreen: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !state.email.isEmpty && state.email.contains("@") && state.email.contains(".")
     }
 }

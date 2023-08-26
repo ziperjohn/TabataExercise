@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var authViewState: AuthViewState
+    @EnvironmentObject var userObject: UserObservableObject
 
     var body: some View {
         Group {
-            if authViewState.userSession != nil {
-                TabViewWrapper()
+            if userObject.userSession != nil {
+                TabView {
+                    TabataScreen()
+                        .tabItem { Label("Tabata", systemImage: "figure.highintensity.intervaltraining") }
+
+                    ProfileScreen()
+                        .tabItem { Label("Profile", systemImage: "person.fill") }
+                }
+                .accentColor(.orange)
             } else {
                 SignInScreen()
             }
@@ -24,6 +31,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(AuthViewState())
+            .environmentObject(UserObservableObject(authService: AuthService(), firestoreService: FirestoreService()))
     }
 }

@@ -36,7 +36,6 @@ class AuthViewState: ObservableObject {
         } catch {
             Log.error("Faild to sign in with error: \(error.localizedDescription)")
             self.errorMessage = error.localizedDescription
-            // TODO: Show alert message
         }
     }
 

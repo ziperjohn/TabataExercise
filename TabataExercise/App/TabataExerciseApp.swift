@@ -10,8 +10,6 @@ import SwiftUI
 
 @main
 struct TabataExerciseApp: App {
-    @StateObject var authViewState = AuthViewState()
-
     init() {
         FirebaseApp.configure()
     }
@@ -19,7 +17,7 @@ struct TabataExerciseApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(authViewState)
+                .environmentObject(UserObservableObject(authService: AuthService(), firestoreService: FirestoreService()))
         }
     }
 }

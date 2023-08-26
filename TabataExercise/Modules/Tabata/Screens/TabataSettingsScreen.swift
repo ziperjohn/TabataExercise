@@ -9,7 +9,10 @@ import SwiftUI
 
 struct TabataSettingsScreen: View {
     var body: some View {
-        Text("Tabata settings screen")
+        VStack {
+            Text("Tabata settings screen")
+        }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

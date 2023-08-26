@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct ProfileScreen: View {
-    @EnvironmentObject var authViewState: AuthViewState
+    let state = ProfileStateView()
 
     var body: some View {
         VStack {
-            if let user = authViewState.currentUser {
-                Text("\(user.nickname)")
-                Text("\(user.email)")
+            if state.currentUser != nil {
+                if let nickname = state.nickname {
+                    Text(nickname)
+                }
 
-                PrimaryButton(text: "SIGN OUT", icon: Image(systemName: "arrow.right"), action: { authViewState.signOut() }, isDisabled: false)
-                PrimaryButton(text: "DELETE USER", icon: Image(systemName: "xmark.bin"), action: { authViewState.deleteUser() }, isDisabled: false)
+                if let email = state.email {
+                    Text(email)
+                }
+
+                PrimaryButton(text: "SIGN OUT", icon: Image(systemName: "arrow.right"), action: { Task { try state.signOut() } }, isDisabled: false)
+                PrimaryButton(text: "DELETE USER", icon: Image(systemName: "xmark.bin"), action: { Task { try await state.deleteUser() } }, isDisabled: false)
             }
         }
     }
@@ -26,6 +31,6 @@ struct ProfileScreen: View {
 struct ProfileScreen_Previews: PreviewProvider {
     static var previews: some View {
         ProfileScreen()
-            .environmentObject(AuthViewState())
+            .environmentObject(UserObservableObject(authService: AuthService(), firestoreService: FirestoreService()))
     }
 }

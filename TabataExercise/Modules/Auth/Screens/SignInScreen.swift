@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct SignInScreen: View {
-    @State private var email = ""
-    @State private var password = ""
-
-    @EnvironmentObject var authViewState: AuthViewState
+    let state = SignInStateView()
 
     var body: some View {
         NavigationStack {
@@ -24,11 +21,11 @@ struct SignInScreen: View {
 
                 // Text inputs
 
-                TextInput(text: $email, title: "Email", placeHolder: "name@example.com", icon: Image(systemName: "envelope"))
+                TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: Image(systemName: "envelope"))
                     .autocapitalization(.none)
 
                 ZStack(alignment: .trailing) {
-                    TextInput(text: $password, title: "Password", placeHolder: "Enter your password", icon: Image(systemName: "lock"), isSecureField: true)
+                    TextInput(text: state.$password, title: "Password", placeHolder: "Enter your password", icon: Image(systemName: "lock"), isSecureField: true)
 
                     NavigationLink(destination: ForgotPasswordScreen()) {
                         Text("FORGOT")
@@ -45,18 +42,17 @@ struct SignInScreen: View {
                     Spacer()
                     PrimaryButton(text: "SIGN IN",
                                   icon: Image(systemName: "arrow.right"),
-                                  action: { Task { try await authViewState.signIn(withEmail: email, password: password) } },
+                                  action: { Task { try await state.signIn() } },
                                   isDisabled: !formIsValid)
                 }.padding(.horizontal)
 
+                Spacer()
+
                 // Error message
 
-                if let error = authViewState.errorMessage {
-                    Text(error)
-                        .foregroundColor(.red)
+                if let error = state.errorMessage {
+                    AlertMessage(text: error, color: .red)
                 }
-
-                Spacer()
 
                 // Sign up footer link
 
@@ -69,7 +65,7 @@ struct SignInScreen: View {
 struct SignInScreen_Previews: PreviewProvider {
     static var previews: some View {
         SignInScreen()
-            .environmentObject(AuthViewState())
+            .environmentObject(UserObservableObject(authService: AuthService(), firestoreService: FirestoreService()))
     }
 }
 
@@ -77,6 +73,6 @@ struct SignInScreen_Previews: PreviewProvider {
 
 extension SignInScreen: AuthenticationFormProtocol {
     var formIsValid: Bool {
-        return !email.isEmpty && email.contains("@") && email.contains(".") && !password.isEmpty && password.count > 5
+        return !state.email.isEmpty && state.email.contains("@") && state.email.contains(".") && !state.password.isEmpty && state.password.count > 5
     }
 }
