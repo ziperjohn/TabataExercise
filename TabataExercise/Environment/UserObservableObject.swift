@@ -6,7 +6,12 @@
 //
 
 import Firebase
+import FirebaseFirestoreSwift
 import Foundation
+
+protocol AuthenticationFormProtocol {
+    var formIsValid: Bool { get }
+}
 
 @MainActor
 class UserObservableObject: ObservableObject {

@@ -15,7 +15,7 @@ struct ContentView: View {
             if userObject.userSession != nil {
                 TabView {
                     TabataScreen()
-                        .tabItem { Label("Tabata", systemImage: "figure.highintensity.intervaltraining") }
+                        .tabItem { Label("Tabata", systemImage: "stopwatch") }
 
                     ProfileScreen()
                         .tabItem { Label("Profile", systemImage: "person.fill") }

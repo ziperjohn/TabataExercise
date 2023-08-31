@@ -24,6 +24,8 @@ struct ProfileScreen: View {
                 PrimaryButton(text: "SIGN OUT", icon: Image(systemName: "arrow.right"), action: { Task { try state.signOut() } }, isDisabled: false)
                 PrimaryButton(text: "DELETE USER", icon: Image(systemName: "xmark.bin"), action: { Task { try await state.deleteUser() } }, isDisabled: false)
             }
+
+            PrimaryButton(text: "SIGN OUT", icon: Image(systemName: "arrow.right"), action: { Task { try state.signOut() } }, isDisabled: false)
         }
     }
 }

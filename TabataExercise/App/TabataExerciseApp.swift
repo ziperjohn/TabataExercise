@@ -18,6 +18,7 @@ struct TabataExerciseApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(UserObservableObject(authService: AuthService(), firestoreService: FirestoreService()))
+                .environmentObject(TabataObservableObject())
         }
     }
 }
