@@ -22,7 +22,7 @@ struct TabataSettingsScreen: View {
             } header: {
                 Text("Times")
             } footer: {
-                Text("Total exercise time: \(state.totalTime)")
+                Text("Workout time: \(state.workoutTime.toTimeString())")
             }
 
             Section("Repeats") {

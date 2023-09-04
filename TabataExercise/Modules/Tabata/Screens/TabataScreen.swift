@@ -8,65 +8,52 @@
 import SwiftUI
 
 struct TabataScreen: View {
-    @State var totalProgress = 0.85
-    @State var phaseProgress = 0.35
+    let state = TabataStateView()
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var body: some View {
         NavigationStack {
-            // Sets and cycles progress
+            // MARK: Sets and cycles progress
+
             HStack(spacing: 100) {
-                ProgressText(label: "Sets", current: "-", total: "-")
+                ProgressText(label: "Sets", current: "\(state.currentSet)", total: "\(state.tabataModel.sets)", workoutState: state.workoutState)
 
-                ProgressText(label: "Cycles", current: "-", total: "-")
+                ProgressText(label: "Cycles", current: "\(state.currentCycle)", total: "\(state.tabataModel.cycles)", workoutState: state.workoutState)
             }
 
             Spacer()
 
-            // Circle progress with countdown
+            // MARK: - Progress ring
 
-            ZStack {
-                CircleProgress(progress: $totalProgress, width: 300, height: 300, colors: blueGradient, animationDuration: 1)
-
-                CircleProgress(progress: $phaseProgress, width: 255, height: 255, colors: redGradient, animationDuration: 1)
-
-                VStack(spacing: 10) {
-                    Text("Exercise")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .opacity(0.5)
-
-                    Text("11")
-                        .font(.system(size: 75, weight: .heavy))
-                        .opacity(0.8)
-
-                    Text("34:12")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .opacity(0.5)
+            ProgressRing(totalProgress: state.$totalProgress, phaseProgress: state.$phaseProgress, currentPhase: state.$tabataPhase, phaseTimeLeft: state.$phaseTimeLeft, exerciseTime: state.$exerciseTime, animationDuration: state.animationDuration)
+                .onReceive(timer) { _ in
+                    state.track()
                 }
-            }
 
             Spacer()
 
-            // Buttons section
+            // MARK: - Buttons section
 
             HStack {
-                CircleButton(icon: Image(systemName: "stop"), size: 75, action: { print("Stop") })
-                CircleButton(icon: Image(systemName: "play"), size: 90, action: { print("Start") })
-
-                NavigationLink(destination: TabataSettingsScreen()) {
-                    Image(systemName: "gearshape")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(width: 75, height: 75)
-                        .background(
-                            LinearGradient(gradient: Gradient(colors: [.yellow, .orange]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                        )
-                        .clipShape(Circle())
-                }
+                CircleButton(icon: Image(systemName: "stop"),
+                             size: 75,
+                             action: { state.stopExercise() },
+                             isDisabled: state.workoutState != .pause)
+                CircleButton(icon: Image(systemName: state.mainButtonIcon),
+                             size: 90,
+                             action: { state.workoutState == .inactive ? state.startExercise() : state.workoutState == .pause ?
+                                 state.resumeExercise() : state.pauseExercise()
+                             },
+                             isDisabled: false)
+                CircleSettingsButton(isDisabled: state.workoutState != .inactive)
             }
 
             Spacer()
         }
+        .sheet(isPresented: state.$summarySheetIsShowed) {
+            SummaryScreen()
+        }
+        .toolbar(state.workoutState == .active ? .hidden : .visible, for: .tabBar)
         .tint(.orange)
     }
 }

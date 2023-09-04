@@ -13,4 +13,8 @@ class TabataObservableObject: ObservableObject {
     init() {
         tabataModel = TabataModel(countdown: 10, warmup: 10, exercise: 10, rest: 10, recovery: 10, cooldown: 10, sets: 5, cycles: 3)
     }
+
+    var workoutTime: Int {
+        tabataModel.warmup + tabataModel.cooldown + ((tabataModel.exercise + tabataModel.rest) * tabataModel.sets + tabataModel.recovery) * tabataModel.cycles
+    }
 }

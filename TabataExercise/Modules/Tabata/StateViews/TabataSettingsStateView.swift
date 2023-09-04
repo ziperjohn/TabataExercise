@@ -48,9 +48,8 @@ struct TabataSettingsStateView: DynamicProperty {
         tabataObject.tabataModel.cycles
     }
 
-    var totalTime: String {
-        let result = countdown + warmup + cooldown + ((exercise + rest) * sets + recovery) * cycles
-        return result.asString(style: .short)
+    var workoutTime: Int {
+        tabataObject.workoutTime
     }
 
     func onRepeatsSheetDismiss() {
@@ -63,14 +62,15 @@ struct TabataSettingsStateView: DynamicProperty {
 
     func onTimeSheetDismiss() {
         switch TabataPhase(rawValue: sheetTitle) {
-        case .countdown: tabataObject.tabataModel.countdown = tuplesToSeconds()
-        case .warmup: tabataObject.tabataModel.warmup = tuplesToSeconds()
-        case .exercise: tabataObject.tabataModel.exercise = tuplesToSeconds()
-        case .rest: tabataObject.tabataModel.rest = tuplesToSeconds()
-        case .recovery: tabataObject.tabataModel.recovery = tuplesToSeconds()
-        case .cooldown: tabataObject.tabataModel.cooldown = tuplesToSeconds()
-        case .finished: break
-        case .none: break
+            case .notStarted: break
+            case .countdown: tabataObject.tabataModel.countdown = tuplesToSeconds()
+            case .warmup: tabataObject.tabataModel.warmup = tuplesToSeconds()
+            case .exercise: tabataObject.tabataModel.exercise = tuplesToSeconds()
+            case .rest: tabataObject.tabataModel.rest = tuplesToSeconds()
+            case .recovery: tabataObject.tabataModel.recovery = tuplesToSeconds()
+            case .cooldown: tabataObject.tabataModel.cooldown = tuplesToSeconds()
+            case .finished: break
+            case .none: break
         }
     }
 

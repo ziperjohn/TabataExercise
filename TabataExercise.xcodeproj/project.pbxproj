@@ -45,10 +45,23 @@
 		1E39FF2C2A9CFCBF0061E7E0 /* TabataObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39FF2B2A9CFCBF0061E7E0 /* TabataObservableObject.swift */; };
 		1E39FF2E2A9CFD120061E7E0 /* TabataPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39FF2D2A9CFD120061E7E0 /* TabataPhase.swift */; };
 		1E39FF302A9D05040061E7E0 /* TimeSpinnerSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39FF2F2A9D05040061E7E0 /* TimeSpinnerSelection.swift */; };
+		1E3DF8F82AA0BFEA002BAF96 /* TabataStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DF8F72AA0BFEA002BAF96 /* TabataStateView.swift */; };
+		1E3DF8FA2AA0C0BE002BAF96 /* WorkoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DF8F92AA0C0BE002BAF96 /* WorkoutState.swift */; };
+		1E3DF8FC2AA1CC46002BAF96 /* CircleSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DF8FB2AA1CC46002BAF96 /* CircleSettingsButton.swift */; };
+		1E3DF8FE2AA1D284002BAF96 /* ColoredRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DF8FD2AA1D284002BAF96 /* ColoredRing.swift */; };
+		1E504D742AA4DFD200CA5EA3 /* StatisticsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D732AA4DFD200CA5EA3 /* StatisticsGrid.swift */; };
+		1E504D762AA4E46200CA5EA3 /* StatisticsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D752AA4E46200CA5EA3 /* StatisticsText.swift */; };
+		1E504D782AA4ED3B00CA5EA3 /* IntensityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D772AA4ED3B00CA5EA3 /* IntensityRow.swift */; };
+		1E504D7A2AA4EEEB00CA5EA3 /* SummaryTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D792AA4EEEB00CA5EA3 /* SummaryTitle.swift */; };
+		1E504D7E2AA5A6C100CA5EA3 /* IntToTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D7D2AA5A6C100CA5EA3 /* IntToTimeString.swift */; };
 		1E843A572A9F8A0F004E43D2 /* TabataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E843A562A9F8A0F004E43D2 /* TabataModel.swift */; };
 		1EAF810D2A9A3B40009DA4C3 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAF810C2A9A3B40009DA4C3 /* AlertMessage.swift */; };
-		1EAF810F2A9B9E11009DA4C3 /* CircleProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAF810E2A9B9E11009DA4C3 /* CircleProgress.swift */; };
+		1EAF810F2A9B9E11009DA4C3 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAF810E2A9B9E11009DA4C3 /* ProgressRing.swift */; };
 		1EAF81112A9B9E9D009DA4C3 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAF81102A9B9E9D009DA4C3 /* Gradients.swift */; };
+		1EC0A60B2AA4BC5D0008F3F3 /* SummaryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0A60A2AA4BC5D0008F3F3 /* SummaryScreen.swift */; };
+		1EC0A60D2AA4C0070008F3F3 /* SummaryStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0A60C2AA4C0070008F3F3 /* SummaryStateView.swift */; };
+		1EC0A60F2AA4CBEE0008F3F3 /* IntensityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0A60E2AA4CBEE0008F3F3 /* IntensityScreen.swift */; };
+		1EC0A6112AA4CCC60008F3F3 /* Intensity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0A6102AA4CCC60008F3F3 /* Intensity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,10 +100,23 @@
 		1E39FF2B2A9CFCBF0061E7E0 /* TabataObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataObservableObject.swift; sourceTree = "<group>"; };
 		1E39FF2D2A9CFD120061E7E0 /* TabataPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataPhase.swift; sourceTree = "<group>"; };
 		1E39FF2F2A9D05040061E7E0 /* TimeSpinnerSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpinnerSelection.swift; sourceTree = "<group>"; };
+		1E3DF8F72AA0BFEA002BAF96 /* TabataStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataStateView.swift; sourceTree = "<group>"; };
+		1E3DF8F92AA0C0BE002BAF96 /* WorkoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutState.swift; sourceTree = "<group>"; };
+		1E3DF8FB2AA1CC46002BAF96 /* CircleSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSettingsButton.swift; sourceTree = "<group>"; };
+		1E3DF8FD2AA1D284002BAF96 /* ColoredRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredRing.swift; sourceTree = "<group>"; };
+		1E504D732AA4DFD200CA5EA3 /* StatisticsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsGrid.swift; sourceTree = "<group>"; };
+		1E504D752AA4E46200CA5EA3 /* StatisticsText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsText.swift; sourceTree = "<group>"; };
+		1E504D772AA4ED3B00CA5EA3 /* IntensityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityRow.swift; sourceTree = "<group>"; };
+		1E504D792AA4EEEB00CA5EA3 /* SummaryTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTitle.swift; sourceTree = "<group>"; };
+		1E504D7D2AA5A6C100CA5EA3 /* IntToTimeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntToTimeString.swift; sourceTree = "<group>"; };
 		1E843A562A9F8A0F004E43D2 /* TabataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataModel.swift; sourceTree = "<group>"; };
 		1EAF810C2A9A3B40009DA4C3 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
-		1EAF810E2A9B9E11009DA4C3 /* CircleProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgress.swift; sourceTree = "<group>"; };
+		1EAF810E2A9B9E11009DA4C3 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		1EAF81102A9B9E9D009DA4C3 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
+		1EC0A60A2AA4BC5D0008F3F3 /* SummaryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryScreen.swift; sourceTree = "<group>"; };
+		1EC0A60C2AA4C0070008F3F3 /* SummaryStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryStateView.swift; sourceTree = "<group>"; };
+		1EC0A60E2AA4CBEE0008F3F3 /* IntensityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityScreen.swift; sourceTree = "<group>"; };
+		1EC0A6102AA4CCC60008F3F3 /* Intensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intensity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +198,7 @@
 			children = (
 				1E304E082A97D50100993394 /* Log.swift */,
 				1EAF81102A9B9E9D009DA4C3 /* Gradients.swift */,
+				1E504D7D2AA5A6C100CA5EA3 /* IntToTimeString.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -277,6 +304,8 @@
 			children = (
 				1E304E152A98947E00993394 /* TabataScreen.swift */,
 				1E304E1C2A98959400993394 /* TabataSettingsScreen.swift */,
+				1EC0A60A2AA4BC5D0008F3F3 /* SummaryScreen.swift */,
+				1EC0A60E2AA4CBEE0008F3F3 /* IntensityScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -286,6 +315,8 @@
 			children = (
 				1E39FF2D2A9CFD120061E7E0 /* TabataPhase.swift */,
 				1E843A562A9F8A0F004E43D2 /* TabataModel.swift */,
+				1E3DF8F92AA0C0BE002BAF96 /* WorkoutState.swift */,
+				1EC0A6102AA4CCC60008F3F3 /* Intensity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,7 +324,7 @@
 		1E304E182A9894DA00993394 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1EAF810E2A9B9E11009DA4C3 /* CircleProgress.swift */,
+				1EAF810E2A9B9E11009DA4C3 /* ProgressRing.swift */,
 				1E39FF252A9CE2060061E7E0 /* CircleButton.swift */,
 				1E39FF272A9CE99B0061E7E0 /* ProgressText.swift */,
 				1E39FF292A9CED830061E7E0 /* ListRow.swift */,
@@ -301,6 +332,12 @@
 				1E02A33A2A9DD0A9001D933C /* TimeBottomSheet.swift */,
 				1E02A33C2A9DDD0E001D933C /* RepeatsSpinnerSelection.swift */,
 				1E02A33E2A9DDED6001D933C /* RepeatsSheet.swift */,
+				1E3DF8FB2AA1CC46002BAF96 /* CircleSettingsButton.swift */,
+				1E3DF8FD2AA1D284002BAF96 /* ColoredRing.swift */,
+				1E504D732AA4DFD200CA5EA3 /* StatisticsGrid.swift */,
+				1E504D752AA4E46200CA5EA3 /* StatisticsText.swift */,
+				1E504D772AA4ED3B00CA5EA3 /* IntensityRow.swift */,
+				1E504D792AA4EEEB00CA5EA3 /* SummaryTitle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -323,6 +360,8 @@
 			isa = PBXGroup;
 			children = (
 				1E02A3362A9DCC51001D933C /* TabataSettingsStateView.swift */,
+				1E3DF8F72AA0BFEA002BAF96 /* TabataStateView.swift */,
+				1EC0A60C2AA4C0070008F3F3 /* SummaryStateView.swift */,
 			);
 			path = StateViews;
 			sourceTree = "<group>";
@@ -433,18 +472,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E3DF8FA2AA0C0BE002BAF96 /* WorkoutState.swift in Sources */,
 				1E39FF2C2A9CFCBF0061E7E0 /* TabataObservableObject.swift in Sources */,
+				1E3DF8F82AA0BFEA002BAF96 /* TabataStateView.swift in Sources */,
 				1E02A3372A9DCC51001D933C /* TabataSettingsStateView.swift in Sources */,
 				1E18FE412A9655C00061A9F5 /* PrimaryButton.swift in Sources */,
+				1E504D762AA4E46200CA5EA3 /* StatisticsText.swift in Sources */,
 				1E18FE262A96506B0061A9F5 /* ContentView.swift in Sources */,
 				1E39FF302A9D05040061E7E0 /* TimeSpinnerSelection.swift in Sources */,
 				1E304E092A97D50100993394 /* Log.swift in Sources */,
+				1E504D7A2AA4EEEB00CA5EA3 /* SummaryTitle.swift in Sources */,
 				1E304E1D2A98959400993394 /* TabataSettingsScreen.swift in Sources */,
+				1E3DF8FE2AA1D284002BAF96 /* ColoredRing.swift in Sources */,
 				1E843A572A9F8A0F004E43D2 /* TabataModel.swift in Sources */,
 				1E18FE3E2A96532D0061A9F5 /* ForgotPasswordScreen.swift in Sources */,
+				1EC0A60D2AA4C0070008F3F3 /* SummaryStateView.swift in Sources */,
 				1E39FF262A9CE2060061E7E0 /* CircleButton.swift in Sources */,
 				1EAF810D2A9A3B40009DA4C3 /* AlertMessage.swift in Sources */,
+				1EC0A60F2AA4CBEE0008F3F3 /* IntensityScreen.swift in Sources */,
 				1E304E0F2A97DDFD00993394 /* ProfileScreen.swift in Sources */,
+				1E504D742AA4DFD200CA5EA3 /* StatisticsGrid.swift in Sources */,
 				1E18FE4A2A966E700061A9F5 /* FotterNavigation.swift in Sources */,
 				1E304E232A989A4F00993394 /* FirestoreService.swift in Sources */,
 				1E18FE242A96506B0061A9F5 /* TabataExerciseApp.swift in Sources */,
@@ -453,15 +500,20 @@
 				1E02A33F2A9DDED6001D933C /* RepeatsSheet.swift in Sources */,
 				1E304E2E2A98E98500993394 /* ProfileStateView.swift in Sources */,
 				1E02A33B2A9DD0A9001D933C /* TimeBottomSheet.swift in Sources */,
+				1E3DF8FC2AA1CC46002BAF96 /* CircleSettingsButton.swift in Sources */,
+				1E504D782AA4ED3B00CA5EA3 /* IntensityRow.swift in Sources */,
 				1E304E262A98CFD900993394 /* UserObservableObject.swift in Sources */,
-				1EAF810F2A9B9E11009DA4C3 /* CircleProgress.swift in Sources */,
+				1EAF810F2A9B9E11009DA4C3 /* ProgressRing.swift in Sources */,
+				1EC0A6112AA4CCC60008F3F3 /* Intensity.swift in Sources */,
 				1E304E0B2A97D94500993394 /* User.swift in Sources */,
 				1E18FE3C2A96530B0061A9F5 /* SignUpScreen.swift in Sources */,
 				1E18FE452A9668980061A9F5 /* AuthTitle.swift in Sources */,
+				1E504D7E2AA5A6C100CA5EA3 /* IntToTimeString.swift in Sources */,
 				1E304E282A98DE5C00993394 /* SignInStateView.swift in Sources */,
 				1E02A33D2A9DDD0E001D933C /* RepeatsSpinnerSelection.swift in Sources */,
 				1E39FF2E2A9CFD120061E7E0 /* TabataPhase.swift in Sources */,
 				1E304E212A989A3B00993394 /* AuthService.swift in Sources */,
+				1EC0A60B2AA4BC5D0008F3F3 /* SummaryScreen.swift in Sources */,
 				1E304E162A98947E00993394 /* TabataScreen.swift in Sources */,
 				1EAF81112A9B9E9D009DA4C3 /* Gradients.swift in Sources */,
 				1E304E2A2A98E65200993394 /* SignUpStateView.swift in Sources */,

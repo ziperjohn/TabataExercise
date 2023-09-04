@@ -8,6 +8,7 @@
 import Foundation
 
 enum TabataPhase: String {
+    case notStarted = "Ready?"
     case countdown = "Countdown"
     case warmup = "Warmup"
     case exercise = "Exercise"

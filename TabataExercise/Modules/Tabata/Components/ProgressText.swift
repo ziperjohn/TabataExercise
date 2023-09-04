@@ -11,11 +11,17 @@ struct ProgressText: View {
     let label: String
     let current: String
     let total: String
+    let workoutState: WorkoutState
 
     var body: some View {
         VStack(spacing: 10) {
-            Text("\(current) / \(total)")
-                .font(.headline)
+            if workoutState == .inactive {
+                Text("- / -")
+                    .font(.headline)
+            } else {
+                Text("\(current) / \(total)")
+                    .font(.headline)
+            }
 
             Text(label)
                 .font(.subheadline)
@@ -26,6 +32,6 @@ struct ProgressText: View {
 
 struct ProgressText_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressText(label: "Sets", current: "-", total: "-")
+        ProgressText(label: "Sets", current: "5", total: "8", workoutState: .inactive)
     }
 }

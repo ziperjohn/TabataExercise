@@ -13,7 +13,7 @@ struct RepeatsSpinnerSelection: View {
     var body: some View {
         HStack {
             Picker(selection: $repeats, label: Text("Repeats")) {
-                ForEach(0 ..< 61) { repeats in
+                ForEach(1 ..< 61) { repeats in
                     Text("\(repeats)")
                         .tag(repeats)
                 }
