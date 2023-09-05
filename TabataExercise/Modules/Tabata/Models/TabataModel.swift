@@ -16,4 +16,12 @@ struct TabataModel {
     var cooldown: Int
     var sets: Int
     var cycles: Int
+    var isSoundEnabled: Bool
+    var countdownSound: SoundEffect
+    var warmupSound: SoundEffect
+    var exerciseSound: SoundEffect
+    var restSound: SoundEffect
+    var recoverySound: SoundEffect
+    var cooldownSound: SoundEffect
+    var finishSound: SoundEffect
 }

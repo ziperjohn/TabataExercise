@@ -22,7 +22,7 @@ struct TabataStateView: DynamicProperty {
     @State private(set) var totalProgress: Double = 0.0
     @State private(set) var phaseProgress: Double = 0.0
     @State private(set) var animationDuration: Double = 1.0
-   
+    
     // MARK: - Variables
     
     var tabataModel: TabataModel {
@@ -56,6 +56,7 @@ struct TabataStateView: DynamicProperty {
     
     func startExercise() {
         Log.info("START")
+        playSound(phase: .warmup)
         workoutState = .active
         tabataPhase = .warmup
         currentSet = 1
@@ -83,6 +84,7 @@ struct TabataStateView: DynamicProperty {
     func track() {
         guard workoutState == .active else { return }
         guard totalProgress < 1.0 else {
+            playSound(phase: .finished)
             summarySheetIsShowed = true
             workoutState = .inactive
             resetVariables()
@@ -137,10 +139,26 @@ struct TabataStateView: DynamicProperty {
     }
     
     private func setNewPhaseValues(newPhase: TabataPhase, phaseTime: Int) {
+        playSound(phase: newPhase)
         tabataPhase = newPhase
         currentPhaseTime = phaseTime
         phaseTimeLeft = phaseTime
         animationDuration = 0.0
         phaseProgress = 0.0
+    }
+    
+    private func playSound(phase: TabataPhase) {
+        guard tabataModel.isSoundEnabled else { return }
+        
+        switch phase {
+            case .notStarted: break
+            case .countdown: SoundService.shared.playSound(tabataModel.countdownSound)
+            case .warmup: SoundService.shared.playSound(tabataModel.warmupSound)
+            case .exercise: SoundService.shared.playSound(tabataModel.exerciseSound)
+            case .rest: SoundService.shared.playSound(tabataModel.restSound)
+            case .recovery: SoundService.shared.playSound(tabataModel.recoverySound)
+            case .cooldown: SoundService.shared.playSound(tabataModel.cooldownSound)
+            case .finished: SoundService.shared.playSound(tabataModel.finishSound)
+        }
     }
 }

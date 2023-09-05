@@ -19,7 +19,7 @@ struct TabataScreen: View {
                 ProgressText(label: "Sets", current: "\(state.currentSet)", total: "\(state.tabataModel.sets)", workoutState: state.workoutState)
 
                 ProgressText(label: "Cycles", current: "\(state.currentCycle)", total: "\(state.tabataModel.cycles)", workoutState: state.workoutState)
-            }
+            }.padding(.top, 20)
 
             Spacer()
 
@@ -54,7 +54,6 @@ struct TabataScreen: View {
             SummaryScreen()
         }
         .toolbar(state.workoutState == .active ? .hidden : .visible, for: .tabBar)
-        .tint(.orange)
     }
 }
 

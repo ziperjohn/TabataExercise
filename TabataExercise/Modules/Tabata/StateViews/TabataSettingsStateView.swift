@@ -10,46 +10,41 @@ import SwiftUI
 struct TabataSettingsStateView: DynamicProperty {
     @EnvironmentObject var tabataObject: TabataObservableObject
 
-    @State var timeSheetIsShowed = false
-    @State var repeatsSheetIsShowed = false
-    @State var sheetTitle = ""
-    @State var repeats = 1
-    @State var time = (minutes: 0, seconds: 30)
+    @State private(set) var timeSheetIsShowed = false
+    @State private(set) var repeatsSheetIsShowed = false
+    @State private(set) var sheetTitle = ""
+    @State private(set) var repeats = 1
+    @State private(set) var time = (minutes: 0, seconds: 30)
+    @State private(set) var isSoundEnabled = true
+    @State private(set) var countdownSound: SoundEffect = .beep
+    @State private(set) var warmupSound: SoundEffect = .airhorn
+    @State private(set) var exerciseSound: SoundEffect = .gooo
+    @State private(set) var restSound: SoundEffect = .relax
+    @State private(set) var recoverySound: SoundEffect = .relax
+    @State private(set) var cooldownSound: SoundEffect = .boxingBell
+    @State private(set) var finishSound: SoundEffect = .trippleAirhorn
 
-    var countdown: Int {
-        tabataObject.tabataModel.countdown
-    }
+    // MARK: - Variables
 
-    var warmup: Int {
-        tabataObject.tabataModel.warmup
-    }
-
-    var exercise: Int {
-        tabataObject.tabataModel.exercise
-    }
-
-    var rest: Int {
-        tabataObject.tabataModel.rest
-    }
-
-    var recovery: Int {
-        tabataObject.tabataModel.recovery
-    }
-
-    var cooldown: Int {
-        tabataObject.tabataModel.cooldown
-    }
-
-    var sets: Int {
-        tabataObject.tabataModel.sets
-    }
-
-    var cycles: Int {
-        tabataObject.tabataModel.cycles
+    var tabataModel: TabataModel {
+        tabataObject.tabataModel
     }
 
     var workoutTime: Int {
         tabataObject.workoutTime
+    }
+
+    // MARK: - Functions
+
+    func initSounds() {
+        isSoundEnabled = tabataModel.isSoundEnabled
+        countdownSound = tabataModel.countdownSound
+        warmupSound = tabataModel.warmupSound
+        exerciseSound = tabataModel.exerciseSound
+        restSound = tabataModel.restSound
+        recoverySound = tabataModel.recoverySound
+        cooldownSound = tabataModel.cooldownSound
+        finishSound = tabataModel.finishSound
     }
 
     func onRepeatsSheetDismiss() {
@@ -74,60 +69,92 @@ struct TabataSettingsStateView: DynamicProperty {
         }
     }
 
-    func secondsToTuples(seconds: Int) -> (Int, Int) {
-        return ((seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-
-    func tuplesToSeconds() -> Int {
-        return (time.minutes * 60) + time.seconds
-    }
-
     func changeCountdown() {
-        time = secondsToTuples(seconds: countdown)
+        time = secondsToTuples(seconds: tabataModel.countdown)
         sheetTitle = TabataPhase.countdown.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeWarmup() {
-        time = secondsToTuples(seconds: warmup)
+        time = secondsToTuples(seconds: tabataModel.warmup)
         sheetTitle = TabataPhase.warmup.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeExercise() {
-        time = secondsToTuples(seconds: exercise)
+        time = secondsToTuples(seconds: tabataModel.exercise)
         sheetTitle = TabataPhase.exercise.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeRest() {
-        time = secondsToTuples(seconds: rest)
+        time = secondsToTuples(seconds: tabataModel.rest)
         sheetTitle = TabataPhase.rest.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeRecovery() {
-        time = secondsToTuples(seconds: recovery)
+        time = secondsToTuples(seconds: tabataModel.recovery)
         sheetTitle = TabataPhase.recovery.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeCooldown() {
-        time = secondsToTuples(seconds: cooldown)
+        time = secondsToTuples(seconds: tabataModel.cooldown)
         sheetTitle = TabataPhase.cooldown.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeSets() {
-        repeats = sets
+        repeats = tabataModel.sets
         sheetTitle = "Sets"
         repeatsSheetIsShowed.toggle()
     }
 
     func changeCycles() {
-        repeats = cycles
+        repeats = tabataModel.cycles
         sheetTitle = "Cycles"
         repeatsSheetIsShowed.toggle()
+    }
+
+    func changeCountdownSound() {
+        tabataObject.tabataModel.countdownSound = countdownSound
+    }
+
+    func changeWarmupSound() {
+        tabataObject.tabataModel.warmupSound = warmupSound
+    }
+
+    func changeExerciseSound() {
+        tabataObject.tabataModel.exerciseSound = exerciseSound
+    }
+
+    func changeRestSound() {
+        tabataObject.tabataModel.restSound = restSound
+    }
+
+    func changeRecoverySound() {
+        tabataObject.tabataModel.recoverySound = recoverySound
+    }
+
+    func changeCooldownSound() {
+        tabataObject.tabataModel.cooldownSound = cooldownSound
+    }
+
+    func changefinishSound() {
+        tabataObject.tabataModel.finishSound = finishSound
+    }
+
+    func changeIsSoundEnabled() {
+        tabataObject.tabataModel.isSoundEnabled = isSoundEnabled
+    }
+
+    private func secondsToTuples(seconds: Int) -> (Int, Int) {
+        return ((seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+
+    private func tuplesToSeconds() -> Int {
+        return (time.minutes * 60) + time.seconds
     }
 }
 

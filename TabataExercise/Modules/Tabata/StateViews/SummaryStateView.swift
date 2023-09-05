@@ -15,6 +15,8 @@ struct SummaryStateView: DynamicProperty {
     @State private(set) var intensityValue: Double = 0.0
     @State private(set) var date: Date = .now
 
+    // MARK: - Variables
+
     var tabataModel: TabataModel {
         tabataObject.tabataModel
     }
@@ -40,6 +42,8 @@ struct SummaryStateView: DynamicProperty {
         formatter.dateFormat = "d.M.yyyy H:mm"
         return formatter.string(from: date)
     }
+
+    // MARK: - Functions
 
     func showIntensitySheet() {
         intensitySheetIsShowed.toggle()

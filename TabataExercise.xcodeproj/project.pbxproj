@@ -22,6 +22,12 @@
 		1E18FE432A965DA80061A9F5 /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE422A965DA80061A9F5 /* TextInput.swift */; };
 		1E18FE452A9668980061A9F5 /* AuthTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE442A9668980061A9F5 /* AuthTitle.swift */; };
 		1E18FE4A2A966E700061A9F5 /* FotterNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE492A966E700061A9F5 /* FotterNavigation.swift */; };
+		1E23A9552AA65480001D5295 /* ListRowSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E23A9542AA65480001D5295 /* ListRowSound.swift */; };
+		1E23A9572AA700B1001D5295 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E23A9562AA700B1001D5295 /* Sounds.swift */; };
+		1E23A95C2AA706A7001D5295 /* fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E23A9582AA706A7001D5295 /* fanfare.mp3 */; };
+		1E23A95D2AA706A7001D5295 /* nextLevel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E23A9592AA706A7001D5295 /* nextLevel.mp3 */; };
+		1E23A95E2AA706A7001D5295 /* tada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E23A95A2AA706A7001D5295 /* tada.mp3 */; };
+		1E23A95F2AA706A7001D5295 /* yay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E23A95B2AA706A7001D5295 /* yay.mp3 */; };
 		1E2800A12A977E5000D302F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E2800A02A977E5000D302F9 /* GoogleService-Info.plist */; };
 		1E2800A42A977EF800D302F9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1E2800A32A977EF800D302F9 /* FirebaseAuth */; };
 		1E2800A62A977EF800D302F9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1E2800A52A977EF800D302F9 /* FirebaseFirestore */; };
@@ -62,6 +68,17 @@
 		1EC0A60D2AA4C0070008F3F3 /* SummaryStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0A60C2AA4C0070008F3F3 /* SummaryStateView.swift */; };
 		1EC0A60F2AA4CBEE0008F3F3 /* IntensityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0A60E2AA4CBEE0008F3F3 /* IntensityScreen.swift */; };
 		1EC0A6112AA4CCC60008F3F3 /* Intensity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0A6102AA4CCC60008F3F3 /* Intensity.swift */; };
+		1EED3E142AA61E1A008D05B5 /* airhorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EED3E132AA61E1A008D05B5 /* airhorn.mp3 */; };
+		1EED3E162AA61E79008D05B5 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EED3E152AA61E79008D05B5 /* SoundService.swift */; };
+		1EED3E1C2AA62215008D05B5 /* trippleAirhorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EED3E172AA62215008D05B5 /* trippleAirhorn.mp3 */; };
+		1EED3E1D2AA62215008D05B5 /* relax.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EED3E182AA62215008D05B5 /* relax.mp3 */; };
+		1EED3E1E2AA62215008D05B5 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EED3E192AA62215008D05B5 /* beep.mp3 */; };
+		1EED3E1F2AA62215008D05B5 /* gooo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EED3E1A2AA62215008D05B5 /* gooo.mp3 */; };
+		1EED3E202AA62215008D05B5 /* boxingBell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EED3E1B2AA62215008D05B5 /* boxingBell.mp3 */; };
+		1EED3E222AA62521008D05B5 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EED3E212AA62521008D05B5 /* HapticService.swift */; };
+		1EED3E262AA63C11008D05B5 /* ListRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EED3E252AA63C11008D05B5 /* ListRowSwitch.swift */; };
+		1EED3E282AA63F74008D05B5 /* SoundsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EED3E272AA63F74008D05B5 /* SoundsScreen.swift */; };
+		1EED3E2C2AA6492C008D05B5 /* ListRowSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EED3E2B2AA6492C008D05B5 /* ListRowSelection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +98,12 @@
 		1E18FE422A965DA80061A9F5 /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
 		1E18FE442A9668980061A9F5 /* AuthTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTitle.swift; sourceTree = "<group>"; };
 		1E18FE492A966E700061A9F5 /* FotterNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotterNavigation.swift; sourceTree = "<group>"; };
+		1E23A9542AA65480001D5295 /* ListRowSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowSound.swift; sourceTree = "<group>"; };
+		1E23A9562AA700B1001D5295 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		1E23A9582AA706A7001D5295 /* fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fanfare.mp3; sourceTree = "<group>"; };
+		1E23A9592AA706A7001D5295 /* nextLevel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nextLevel.mp3; sourceTree = "<group>"; };
+		1E23A95A2AA706A7001D5295 /* tada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tada.mp3; sourceTree = "<group>"; };
+		1E23A95B2AA706A7001D5295 /* yay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yay.mp3; sourceTree = "<group>"; };
 		1E2800A02A977E5000D302F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E304E082A97D50100993394 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		1E304E0A2A97D94500993394 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -117,6 +140,17 @@
 		1EC0A60C2AA4C0070008F3F3 /* SummaryStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryStateView.swift; sourceTree = "<group>"; };
 		1EC0A60E2AA4CBEE0008F3F3 /* IntensityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityScreen.swift; sourceTree = "<group>"; };
 		1EC0A6102AA4CCC60008F3F3 /* Intensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intensity.swift; sourceTree = "<group>"; };
+		1EED3E132AA61E1A008D05B5 /* airhorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = airhorn.mp3; sourceTree = "<group>"; };
+		1EED3E152AA61E79008D05B5 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
+		1EED3E172AA62215008D05B5 /* trippleAirhorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = trippleAirhorn.mp3; sourceTree = "<group>"; };
+		1EED3E182AA62215008D05B5 /* relax.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relax.mp3; sourceTree = "<group>"; };
+		1EED3E192AA62215008D05B5 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		1EED3E1A2AA62215008D05B5 /* gooo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gooo.mp3; sourceTree = "<group>"; };
+		1EED3E1B2AA62215008D05B5 /* boxingBell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boxingBell.mp3; sourceTree = "<group>"; };
+		1EED3E212AA62521008D05B5 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		1EED3E252AA63C11008D05B5 /* ListRowSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowSwitch.swift; sourceTree = "<group>"; };
+		1EED3E272AA63F74008D05B5 /* SoundsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsScreen.swift; sourceTree = "<group>"; };
+		1EED3E2B2AA6492C008D05B5 /* ListRowSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowSelection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +187,7 @@
 		1E18FE222A96506B0061A9F5 /* TabataExercise */ = {
 			isa = PBXGroup;
 			children = (
+				1EED3E122AA61E1A008D05B5 /* Sounds */,
 				1E304E242A98CFA400993394 /* Environment */,
 				1E304E1F2A989A2800993394 /* Services */,
 				1E18FE312A96521A0061A9F5 /* App */,
@@ -306,6 +341,7 @@
 				1E304E1C2A98959400993394 /* TabataSettingsScreen.swift */,
 				1EC0A60A2AA4BC5D0008F3F3 /* SummaryScreen.swift */,
 				1EC0A60E2AA4CBEE0008F3F3 /* IntensityScreen.swift */,
+				1EED3E272AA63F74008D05B5 /* SoundsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -317,6 +353,7 @@
 				1E843A562A9F8A0F004E43D2 /* TabataModel.swift */,
 				1E3DF8F92AA0C0BE002BAF96 /* WorkoutState.swift */,
 				1EC0A6102AA4CCC60008F3F3 /* Intensity.swift */,
+				1E23A9562AA700B1001D5295 /* Sounds.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,10 +361,10 @@
 		1E304E182A9894DA00993394 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1EED3E2A2AA648DA008D05B5 /* List */,
 				1EAF810E2A9B9E11009DA4C3 /* ProgressRing.swift */,
 				1E39FF252A9CE2060061E7E0 /* CircleButton.swift */,
 				1E39FF272A9CE99B0061E7E0 /* ProgressText.swift */,
-				1E39FF292A9CED830061E7E0 /* ListRow.swift */,
 				1E39FF2F2A9D05040061E7E0 /* TimeSpinnerSelection.swift */,
 				1E02A33A2A9DD0A9001D933C /* TimeBottomSheet.swift */,
 				1E02A33C2A9DDD0E001D933C /* RepeatsSpinnerSelection.swift */,
@@ -371,6 +408,8 @@
 			children = (
 				1E304E202A989A3B00993394 /* AuthService.swift */,
 				1E304E222A989A4F00993394 /* FirestoreService.swift */,
+				1EED3E152AA61E79008D05B5 /* SoundService.swift */,
+				1EED3E212AA62521008D05B5 /* HapticService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -390,6 +429,34 @@
 				1E304E2D2A98E98500993394 /* ProfileStateView.swift */,
 			);
 			path = StateView;
+			sourceTree = "<group>";
+		};
+		1EED3E122AA61E1A008D05B5 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1E23A9582AA706A7001D5295 /* fanfare.mp3 */,
+				1E23A9592AA706A7001D5295 /* nextLevel.mp3 */,
+				1E23A95A2AA706A7001D5295 /* tada.mp3 */,
+				1E23A95B2AA706A7001D5295 /* yay.mp3 */,
+				1EED3E192AA62215008D05B5 /* beep.mp3 */,
+				1EED3E1B2AA62215008D05B5 /* boxingBell.mp3 */,
+				1EED3E1A2AA62215008D05B5 /* gooo.mp3 */,
+				1EED3E182AA62215008D05B5 /* relax.mp3 */,
+				1EED3E172AA62215008D05B5 /* trippleAirhorn.mp3 */,
+				1EED3E132AA61E1A008D05B5 /* airhorn.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		1EED3E2A2AA648DA008D05B5 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				1E39FF292A9CED830061E7E0 /* ListRow.swift */,
+				1EED3E252AA63C11008D05B5 /* ListRowSwitch.swift */,
+				1EED3E2B2AA6492C008D05B5 /* ListRowSelection.swift */,
+				1E23A9542AA65480001D5295 /* ListRowSound.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,8 +526,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E23A95D2AA706A7001D5295 /* nextLevel.mp3 in Resources */,
+				1EED3E1C2AA62215008D05B5 /* trippleAirhorn.mp3 in Resources */,
+				1EED3E1D2AA62215008D05B5 /* relax.mp3 in Resources */,
+				1EED3E1F2AA62215008D05B5 /* gooo.mp3 in Resources */,
+				1EED3E142AA61E1A008D05B5 /* airhorn.mp3 in Resources */,
 				1E18FE2B2A96506C0061A9F5 /* Preview Assets.xcassets in Resources */,
 				1E2800A12A977E5000D302F9 /* GoogleService-Info.plist in Resources */,
+				1E23A95C2AA706A7001D5295 /* fanfare.mp3 in Resources */,
+				1E23A95E2AA706A7001D5295 /* tada.mp3 in Resources */,
+				1E23A95F2AA706A7001D5295 /* yay.mp3 in Resources */,
+				1EED3E202AA62215008D05B5 /* boxingBell.mp3 in Resources */,
+				1EED3E1E2AA62215008D05B5 /* beep.mp3 in Resources */,
 				1E18FE282A96506C0061A9F5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,17 +551,21 @@
 			files = (
 				1E3DF8FA2AA0C0BE002BAF96 /* WorkoutState.swift in Sources */,
 				1E39FF2C2A9CFCBF0061E7E0 /* TabataObservableObject.swift in Sources */,
+				1EED3E162AA61E79008D05B5 /* SoundService.swift in Sources */,
 				1E3DF8F82AA0BFEA002BAF96 /* TabataStateView.swift in Sources */,
 				1E02A3372A9DCC51001D933C /* TabataSettingsStateView.swift in Sources */,
 				1E18FE412A9655C00061A9F5 /* PrimaryButton.swift in Sources */,
 				1E504D762AA4E46200CA5EA3 /* StatisticsText.swift in Sources */,
 				1E18FE262A96506B0061A9F5 /* ContentView.swift in Sources */,
 				1E39FF302A9D05040061E7E0 /* TimeSpinnerSelection.swift in Sources */,
+				1EED3E282AA63F74008D05B5 /* SoundsScreen.swift in Sources */,
 				1E304E092A97D50100993394 /* Log.swift in Sources */,
 				1E504D7A2AA4EEEB00CA5EA3 /* SummaryTitle.swift in Sources */,
 				1E304E1D2A98959400993394 /* TabataSettingsScreen.swift in Sources */,
+				1EED3E222AA62521008D05B5 /* HapticService.swift in Sources */,
 				1E3DF8FE2AA1D284002BAF96 /* ColoredRing.swift in Sources */,
 				1E843A572A9F8A0F004E43D2 /* TabataModel.swift in Sources */,
+				1EED3E262AA63C11008D05B5 /* ListRowSwitch.swift in Sources */,
 				1E18FE3E2A96532D0061A9F5 /* ForgotPasswordScreen.swift in Sources */,
 				1EC0A60D2AA4C0070008F3F3 /* SummaryStateView.swift in Sources */,
 				1E39FF262A9CE2060061E7E0 /* CircleButton.swift in Sources */,
@@ -495,6 +576,7 @@
 				1E18FE4A2A966E700061A9F5 /* FotterNavigation.swift in Sources */,
 				1E304E232A989A4F00993394 /* FirestoreService.swift in Sources */,
 				1E18FE242A96506B0061A9F5 /* TabataExerciseApp.swift in Sources */,
+				1E23A9572AA700B1001D5295 /* Sounds.swift in Sources */,
 				1E18FE3A2A9652E30061A9F5 /* SignInScreen.swift in Sources */,
 				1E39FF2A2A9CED830061E7E0 /* ListRow.swift in Sources */,
 				1E02A33F2A9DDED6001D933C /* RepeatsSheet.swift in Sources */,
@@ -502,11 +584,13 @@
 				1E02A33B2A9DD0A9001D933C /* TimeBottomSheet.swift in Sources */,
 				1E3DF8FC2AA1CC46002BAF96 /* CircleSettingsButton.swift in Sources */,
 				1E504D782AA4ED3B00CA5EA3 /* IntensityRow.swift in Sources */,
+				1EED3E2C2AA6492C008D05B5 /* ListRowSelection.swift in Sources */,
 				1E304E262A98CFD900993394 /* UserObservableObject.swift in Sources */,
 				1EAF810F2A9B9E11009DA4C3 /* ProgressRing.swift in Sources */,
 				1EC0A6112AA4CCC60008F3F3 /* Intensity.swift in Sources */,
 				1E304E0B2A97D94500993394 /* User.swift in Sources */,
 				1E18FE3C2A96530B0061A9F5 /* SignUpScreen.swift in Sources */,
+				1E23A9552AA65480001D5295 /* ListRowSound.swift in Sources */,
 				1E18FE452A9668980061A9F5 /* AuthTitle.swift in Sources */,
 				1E504D7E2AA5A6C100CA5EA3 /* IntToTimeString.swift in Sources */,
 				1E304E282A98DE5C00993394 /* SignInStateView.swift in Sources */,

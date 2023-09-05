@@ -36,6 +36,7 @@ struct ListRow: View {
 
             Image(systemName: "chevron.forward").imageScale(.large)
         }
+        .frame(height: 40)
         .contentShape(Rectangle())
         .onTapGesture {
             action()

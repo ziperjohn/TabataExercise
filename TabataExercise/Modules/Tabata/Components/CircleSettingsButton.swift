@@ -21,7 +21,6 @@ struct CircleSettingsButton: View {
                 )
                 .clipShape(Circle())
                 .opacity(isDisabled ? 0.5 : 1.0)
-
         }.disabled(isDisabled)
     }
 }

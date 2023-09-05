@@ -14,7 +14,7 @@ struct ProgressText: View {
     let workoutState: WorkoutState
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 5) {
             if workoutState == .inactive {
                 Text("- / -")
                     .font(.headline)
