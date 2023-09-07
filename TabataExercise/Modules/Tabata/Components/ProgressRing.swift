@@ -17,9 +17,9 @@ struct ProgressRing: View {
 
     var body: some View {
         ZStack {
-            ColoredRing(progress: $totalProgress, width: 300, height: 300, colors: blueGradient, animationDuration: 1.0)
+            ColoredRing(progress: $totalProgress, size: 300, colors: blueGradient, animationDuration: 1.0)
 
-            ColoredRing(progress: $phaseProgress, width: 255, height: 255, colors: currentPhase == .exercise ? redGradient : greenGradient, animationDuration: animationDuration)
+            ColoredRing(progress: $phaseProgress, size: 253, colors: currentPhase == .exercise ? redGradient : greenGradient, animationDuration: animationDuration)
 
             VStack(spacing: 10) {
                 Text(currentPhase.rawValue)
@@ -27,10 +27,10 @@ struct ProgressRing: View {
                     .fontWeight(.semibold)
                     .opacity(0.5)
 
-                Text("\(phaseTimeLeft)")
-                    .font(.system(size: 75, weight: .heavy))
+                Text(phaseTimeLeft.toTimeString())
+                    .font(.system(size: 65, weight: .heavy))
                     .opacity(0.8)
-                // TODO: Create extension to convert int to formated String: 12 -> 00:12
+
                 Text(exerciseTime.toTimeString())
                     .font(.title2)
                     .fontWeight(.semibold)

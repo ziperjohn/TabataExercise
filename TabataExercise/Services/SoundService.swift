@@ -17,6 +17,7 @@ class SoundService {
         guard let url = Bundle.main.url(forResource: "\(soundEffect)", withExtension: ".mp3") else { return }
 
         do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {

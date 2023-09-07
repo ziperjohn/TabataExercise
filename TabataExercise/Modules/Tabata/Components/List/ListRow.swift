@@ -17,7 +17,8 @@ struct ListRow: View {
     var body: some View {
         HStack(spacing: 20) {
             if iconName != nil {
-                Image(systemName: iconName!).imageScale(.large)
+                Image(systemName: iconName!)
+                    .imageScale(.large)
                     .foregroundColor(.orange)
                     .frame(width: 30, height: 30)
             }
@@ -34,7 +35,9 @@ struct ListRow: View {
                     .font(.subheadline)
             }
 
-            Image(systemName: "chevron.forward").imageScale(.large)
+            Image(systemName: "chevron.forward")
+                .imageScale(.small)
+                .foregroundColor(.secondary.opacity(0.7))
         }
         .frame(height: 40)
         .contentShape(Rectangle())

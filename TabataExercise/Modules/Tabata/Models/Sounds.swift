@@ -18,4 +18,5 @@ enum SoundEffect: String {
     case nextLevel = "Next level"
     case tada = "Tada"
     case yay = "Yay"
+    case tick = "Tick"
 }

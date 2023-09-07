@@ -13,6 +13,8 @@ struct SoundsScreen: View {
 
     var body: some View {
         List {
+            // MARK: - Sounds section
+
             Section("Select a sound") {
                 ListRowSelection(title: SoundEffect.airhorn, selectedItem: $selectedItem)
                 ListRowSelection(title: SoundEffect.trippleAirhorn, selectedItem: $selectedItem)

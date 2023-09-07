@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ColoredRing: View {
     @Binding var progress: Double
-    let width: CGFloat
-    let height: CGFloat
+    let size: CGFloat
     let colors: [Color]
     let animationDuration: Double
     var body: some View {
@@ -30,12 +29,12 @@ struct ColoredRing: View {
                 .rotationEffect(Angle(degrees: 270))
                 .animation(.linear(duration: animationDuration), value: progress)
         }
-        .frame(width: width, height: height)
+        .frame(width: size, height: size)
     }
 }
 
 struct ColoredRing_Previews: PreviewProvider {
     static var previews: some View {
-        ColoredRing(progress: .constant(1.0), width: 300, height: 300, colors: redGradient, animationDuration: 1.0)
+        ColoredRing(progress: .constant(1.0), size: 300, colors: redGradient, animationDuration: 1.0)
     }
 }

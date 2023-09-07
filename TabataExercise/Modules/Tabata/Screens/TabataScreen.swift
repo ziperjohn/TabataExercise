@@ -13,7 +13,7 @@ struct TabataScreen: View {
 
     var body: some View {
         NavigationStack {
-            // MARK: Sets and cycles progress
+            // MARK: - Sets and cycles progress
 
             HStack(spacing: 100) {
                 ProgressText(label: "Sets", current: "\(state.currentSet)", total: "\(state.tabataModel.sets)", workoutState: state.workoutState)
@@ -37,7 +37,7 @@ struct TabataScreen: View {
             HStack {
                 CircleButton(icon: Image(systemName: "stop"),
                              size: 75,
-                             action: { state.stopExercise() },
+                             action: { state.openAlertDialog() },
                              isDisabled: state.workoutState != .pause)
                 CircleButton(icon: Image(systemName: state.mainButtonIcon),
                              size: 90,
@@ -52,6 +52,17 @@ struct TabataScreen: View {
         }
         .sheet(isPresented: state.$summarySheetIsShowed) {
             SummaryScreen()
+        }
+        .alert(isPresented: state.$alertDialogIsShowed) {
+            Alert(
+                title: Text("Are you sure?"),
+                message: Text("You are in the middle of a workout, would you like to finish this workout?"),
+                primaryButton: .cancel(),
+                secondaryButton: .destructive(
+                    Text("Yes"),
+                    action: state.stopExercise
+                )
+            )
         }
         .toolbar(state.workoutState == .active ? .hidden : .visible, for: .tabBar)
     }

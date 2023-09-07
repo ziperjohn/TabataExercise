@@ -10,7 +10,13 @@ import SwiftUI
 
 struct ProfileStateView: DynamicProperty {
     @EnvironmentObject private var userObject: UserObservableObject
-    @State var errorMessage: String?
+
+    @State private(set) var isDeleteAccountAlertShowed = false
+    @State private(set) var isSignOutAlertShowed = false
+
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+
+    // MARK: - Variables
 
     var currentUser: User? {
         userObject.currentUser
@@ -24,11 +30,21 @@ struct ProfileStateView: DynamicProperty {
         currentUser?.email
     }
 
+    // MARK: - Functions
+
+    func showDeleteAccountAlert() {
+        isDeleteAccountAlertShowed.toggle()
+    }
+
+    func showSignOutAlert() {
+        isSignOutAlertShowed.toggle()
+    }
+
     func signOut() throws {
         do {
             try userObject.signOut()
         } catch {
-            errorMessage = error.localizedDescription
+            Log.error("\(error.localizedDescription)")
         }
     }
 
@@ -36,7 +52,7 @@ struct ProfileStateView: DynamicProperty {
         do {
             try await userObject.deleteUser()
         } catch {
-            errorMessage = error.localizedDescription
+            Log.error("\(error.localizedDescription)")
         }
     }
 }

@@ -26,6 +26,10 @@ class UserObservableObject: ObservableObject {
         self.firestoreService = firestoreService
 
         self.userSession = Auth.auth().currentUser
+
+        Task {
+            try await self.getUserFromDB()
+        }
     }
 
     func signUpAndCreateUser(withEmail email: String, password: String, nickname: String) async throws {

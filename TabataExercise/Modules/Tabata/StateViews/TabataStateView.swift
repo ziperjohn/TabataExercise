@@ -11,6 +11,7 @@ import SwiftUI
 struct TabataStateView: DynamicProperty {
     @EnvironmentObject var tabataObject: TabataObservableObject
     
+    @State private(set) var alertDialogIsShowed: Bool = false
     @State private(set) var summarySheetIsShowed: Bool = false
     @State private(set) var workoutState: WorkoutState = .inactive
     @State private(set) var tabataPhase: TabataPhase = .notStarted
@@ -30,7 +31,7 @@ struct TabataStateView: DynamicProperty {
     }
     
     var workoutTime: Int {
-        tabataObject.workoutTime - 1
+        tabataObject.workoutTime + tabataModel.countdown - 1
     }
     
     var totalProgressIncrementPart: Double {
@@ -56,13 +57,12 @@ struct TabataStateView: DynamicProperty {
     
     func startExercise() {
         Log.info("START")
-        playSound(phase: .warmup)
         workoutState = .active
-        tabataPhase = .warmup
+        tabataPhase = .countdown
         currentSet = 1
         currentCycle = 1
-        phaseTimeLeft = tabataModel.warmup
-        currentPhaseTime = tabataModel.warmup
+        phaseTimeLeft = tabataModel.countdown
+        currentPhaseTime = tabataModel.countdown
     }
     
     func resumeExercise() {
@@ -81,14 +81,24 @@ struct TabataStateView: DynamicProperty {
         resetVariables()
     }
     
+    func openAlertDialog() {
+        alertDialogIsShowed.toggle()
+    }
+    
     func track() {
         guard workoutState == .active else { return }
         guard totalProgress < 1.0 else {
-            playSound(phase: .finished)
+            playSound(sound: tabataModel.finishSound)
             summarySheetIsShowed = true
             workoutState = .inactive
             resetVariables()
             return
+        }
+        
+        if tabataPhase == .countdown {
+            playSound(sound: tabataModel.countdownSound)
+        } else if phaseTimeLeft <= 4 {
+            playSound(sound: .tick)
         }
         
         animationDuration = 1.0
@@ -114,22 +124,22 @@ struct TabataStateView: DynamicProperty {
     
     private func switchTabataPhase() {
         switch tabataPhase {
-        case .notStarted: setNewPhaseValues(newPhase: .warmup, phaseTime: tabataModel.warmup)
-        case .countdown: break
-        case .warmup: setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise)
-        case .exercise: setNewPhaseValues(newPhase: .rest, phaseTime: tabataModel.rest)
+        case .notStarted: setNewPhaseValues(newPhase: .countdown, phaseTime: tabataModel.countdown, sound: tabataModel.countdownSound)
+        case .countdown: setNewPhaseValues(newPhase: .warmup, phaseTime: tabataModel.warmup, sound: tabataModel.warmupSound)
+        case .warmup: setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
+        case .exercise: setNewPhaseValues(newPhase: .rest, phaseTime: tabataModel.rest, sound: tabataModel.restSound)
         case .rest:
             if currentSet < tabataModel.sets {
-                setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise)
+                setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
                 currentSet += 1
             } else if currentCycle <= tabataModel.cycles {
-                setNewPhaseValues(newPhase: .recovery, phaseTime: tabataModel.recovery)
+                setNewPhaseValues(newPhase: .recovery, phaseTime: tabataModel.recovery, sound: tabataModel.recoverySound)
             }
         case .recovery:
             if currentCycle == tabataModel.cycles {
-                setNewPhaseValues(newPhase: .cooldown, phaseTime: tabataModel.cooldown)
+                setNewPhaseValues(newPhase: .cooldown, phaseTime: tabataModel.cooldown, sound: tabataModel.cooldownSound)
             } else {
-                setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise)
+                setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
                 currentCycle += 1
                 currentSet = 1
             }
@@ -138,8 +148,8 @@ struct TabataStateView: DynamicProperty {
         }
     }
     
-    private func setNewPhaseValues(newPhase: TabataPhase, phaseTime: Int) {
-        playSound(phase: newPhase)
+    private func setNewPhaseValues(newPhase: TabataPhase, phaseTime: Int, sound: SoundEffect) {
+        playSound(sound: sound)
         tabataPhase = newPhase
         currentPhaseTime = phaseTime
         phaseTimeLeft = phaseTime
@@ -147,18 +157,9 @@ struct TabataStateView: DynamicProperty {
         phaseProgress = 0.0
     }
     
-    private func playSound(phase: TabataPhase) {
+    private func playSound(sound: SoundEffect) {
         guard tabataModel.isSoundEnabled else { return }
         
-        switch phase {
-            case .notStarted: break
-            case .countdown: SoundService.shared.playSound(tabataModel.countdownSound)
-            case .warmup: SoundService.shared.playSound(tabataModel.warmupSound)
-            case .exercise: SoundService.shared.playSound(tabataModel.exerciseSound)
-            case .rest: SoundService.shared.playSound(tabataModel.restSound)
-            case .recovery: SoundService.shared.playSound(tabataModel.recoverySound)
-            case .cooldown: SoundService.shared.playSound(tabataModel.cooldownSound)
-            case .finished: SoundService.shared.playSound(tabataModel.finishSound)
-        }
+        SoundService.shared.playSound(sound)
     }
 }
