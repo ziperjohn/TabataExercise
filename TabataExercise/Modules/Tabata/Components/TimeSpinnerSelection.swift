@@ -24,7 +24,7 @@ struct TimeSpinnerSelection: View {
             .pickerStyle(WheelPickerStyle())
 
             Picker(selection: $seconds, label: Text("Seconds")) {
-                ForEach(1 ..< 60) { second in
+                ForEach(0 ..< 60) { second in
                     Text("\(second) sec")
                         .tag(second)
                 }

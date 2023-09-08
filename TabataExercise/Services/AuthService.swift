@@ -5,11 +5,12 @@
 //  Created by Jan Vaverka on 25.08.2023.
 //
 
+import Firebase
 import FirebaseAuth
 import Foundation
 
 class AuthService {
-    func signIn(withEmail email: String, password: String) async throws -> FirebaseAuth.User {
+    func signIn(withEmail email: String, password: String) async throws -> Firebase.User {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             return result.user
@@ -19,7 +20,7 @@ class AuthService {
         }
     }
 
-    func signUp(withEmail email: String, password: String) async throws -> FirebaseAuth.User {
+    func signUp(withEmail email: String, password: String) async throws -> Firebase.User {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             return result.user
@@ -47,7 +48,7 @@ class AuthService {
         }
     }
 
-    func deleteUser(user: FirebaseAuth.User) async throws {
+    func deleteUser(user: Firebase.User) async throws {
         do {
             try await user.delete()
         } catch {

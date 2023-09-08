@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SoundEffect: String {
+enum SoundEffect: String, Codable {
     case airhorn = "Airhorn"
     case trippleAirhorn = "Tripple airhorn"
     case boxingBell = "Boxing bell"

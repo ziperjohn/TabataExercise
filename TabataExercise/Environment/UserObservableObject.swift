@@ -6,6 +6,8 @@
 //
 
 import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Foundation
 
@@ -15,7 +17,7 @@ protocol AuthenticationFormProtocol {
 
 @MainActor
 class UserObservableObject: ObservableObject {
-    @Published var userSession: FirebaseAuth.User?
+    @Published var userSession: Firebase.User?
     @Published var currentUser: User?
 
     private let authService: AuthService

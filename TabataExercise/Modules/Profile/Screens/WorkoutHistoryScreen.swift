@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WorkoutHistoryScreen: View {
     let workouts: [Workout]
+
     var body: some View {
         ScrollView {
             // MARK: - Workout history list
@@ -22,6 +23,7 @@ struct WorkoutHistoryScreen: View {
         .background(Color(UIColor.secondarySystemBackground))
         .navigationTitle("History")
         .navigationBarTitleDisplayMode(.large)
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

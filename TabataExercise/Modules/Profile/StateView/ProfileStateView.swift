@@ -31,7 +31,7 @@ struct ProfileStateView: DynamicProperty {
     }
 
     var workouts: [Workout]? {
-        currentUser?.workouts
+        currentUser?.workouts.reversed()
     }
 
     // MARK: - Functions

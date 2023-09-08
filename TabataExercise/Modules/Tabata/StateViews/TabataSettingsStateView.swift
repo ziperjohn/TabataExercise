@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabataSettingsStateView: DynamicProperty {
     @EnvironmentObject var tabataObject: TabataObservableObject
+    
 
     @State private(set) var timeSheetIsShowed = false
     @State private(set) var repeatsSheetIsShowed = false
@@ -26,8 +27,8 @@ struct TabataSettingsStateView: DynamicProperty {
 
     // MARK: - Variables
 
-    var tabataModel: TabataModel {
-        tabataObject.tabataModel
+    var tabataModel: TabataSettings {
+        tabataObject.tabataSettings
     }
 
     var workoutTime: Int {
@@ -49,21 +50,21 @@ struct TabataSettingsStateView: DynamicProperty {
 
     func onRepeatsSheetDismiss() {
         if sheetTitle == "Sets" {
-            tabataObject.tabataModel.sets = repeats
+            tabataObject.tabataSettings.sets = repeats
         } else if sheetTitle == "Cycles" {
-            tabataObject.tabataModel.cycles = repeats
+            tabataObject.tabataSettings.cycles = repeats
         }
     }
 
     func onTimeSheetDismiss() {
         switch TabataPhase(rawValue: sheetTitle) {
             case .notStarted: break
-            case .countdown: tabataObject.tabataModel.countdown = tuplesToSeconds()
-            case .warmup: tabataObject.tabataModel.warmup = tuplesToSeconds()
-            case .exercise: tabataObject.tabataModel.exercise = tuplesToSeconds()
-            case .rest: tabataObject.tabataModel.rest = tuplesToSeconds()
-            case .recovery: tabataObject.tabataModel.recovery = tuplesToSeconds()
-            case .cooldown: tabataObject.tabataModel.cooldown = tuplesToSeconds()
+            case .countdown: tabataObject.tabataSettings.countdown = tuplesToSeconds()
+            case .warmup: tabataObject.tabataSettings.warmup = tuplesToSeconds()
+            case .exercise: tabataObject.tabataSettings.exercise = tuplesToSeconds()
+            case .rest: tabataObject.tabataSettings.rest = tuplesToSeconds()
+            case .recovery: tabataObject.tabataSettings.recovery = tuplesToSeconds()
+            case .cooldown: tabataObject.tabataSettings.cooldown = tuplesToSeconds()
             case .finished: break
             case .none: break
         }
@@ -118,35 +119,35 @@ struct TabataSettingsStateView: DynamicProperty {
     }
 
     func changeCountdownSound() {
-        tabataObject.tabataModel.countdownSound = countdownSound
+        tabataObject.tabataSettings.countdownSound = countdownSound
     }
 
     func changeWarmupSound() {
-        tabataObject.tabataModel.warmupSound = warmupSound
+        tabataObject.tabataSettings.warmupSound = warmupSound
     }
 
     func changeExerciseSound() {
-        tabataObject.tabataModel.exerciseSound = exerciseSound
+        tabataObject.tabataSettings.exerciseSound = exerciseSound
     }
 
     func changeRestSound() {
-        tabataObject.tabataModel.restSound = restSound
+        tabataObject.tabataSettings.restSound = restSound
     }
 
     func changeRecoverySound() {
-        tabataObject.tabataModel.recoverySound = recoverySound
+        tabataObject.tabataSettings.recoverySound = recoverySound
     }
 
     func changeCooldownSound() {
-        tabataObject.tabataModel.cooldownSound = cooldownSound
+        tabataObject.tabataSettings.cooldownSound = cooldownSound
     }
 
     func changefinishSound() {
-        tabataObject.tabataModel.finishSound = finishSound
+        tabataObject.tabataSettings.finishSound = finishSound
     }
 
     func changeIsSoundEnabled() {
-        tabataObject.tabataModel.isSoundEnabled = isSoundEnabled
+        tabataObject.tabataSettings.isSoundEnabled = isSoundEnabled
     }
 
     private func secondsToTuples(seconds: Int) -> (Int, Int) {

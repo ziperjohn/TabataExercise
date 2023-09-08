@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TabataModel {
+struct TabataSettings: Codable {
     var countdown: Int
     var warmup: Int
     var exercise: Int

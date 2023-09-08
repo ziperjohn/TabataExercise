@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TabataStateView: DynamicProperty {
     @EnvironmentObject var tabataObject: TabataObservableObject
-    
+
     @State private(set) var alertDialogIsShowed: Bool = false
     @State private(set) var summarySheetIsShowed: Bool = false
     @State private(set) var workoutState: WorkoutState = .inactive
@@ -26,8 +26,8 @@ struct TabataStateView: DynamicProperty {
     
     // MARK: - Variables
     
-    var tabataModel: TabataModel {
-        tabataObject.tabataModel
+    var tabataModel: TabataSettings {
+        tabataObject.tabataSettings
     }
     
     var workoutTime: Int {

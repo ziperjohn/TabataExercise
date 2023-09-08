@@ -18,8 +18,8 @@ struct SummaryStateView: DynamicProperty {
 
     // MARK: - Variables
 
-    var tabataModel: TabataModel {
-        tabataObject.tabataModel
+    var tabataModel: TabataSettings {
+        tabataObject.tabataSettings
     }
 
     var workoutTime: Int {
