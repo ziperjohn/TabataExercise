@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct SummaryScreen: View {
+    @Environment(\.dismiss) var dismiss
+
     let state = SummaryStateView()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 40) {
             // MARK: - Summary title with date
 
-            SummaryTitle(date: state.formatedDate)
+            SummaryTitleWithCloseButton(date: state.date.formattedDate(), action: {
+                Task { try await state.summaryClosed() }
+                dismiss()
+            })
 
             // MARK: - Cheer title
 

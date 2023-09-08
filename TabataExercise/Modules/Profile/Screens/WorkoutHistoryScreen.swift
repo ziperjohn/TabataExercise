@@ -8,19 +8,15 @@
 import SwiftUI
 
 struct WorkoutHistoryScreen: View {
+    let workouts: [Workout]
     var body: some View {
         ScrollView {
             // MARK: - Workout history list
 
             LazyVStack(spacing: 0) {
-                WorkoutCard(date: "22.4.2022", workoutTime: 2000, exercise: 45, rest: 10, sets: 3, cycles: 8, intensity: .challenging)
-                WorkoutCard(date: "22.4.2022", workoutTime: 2000, exercise: 45, rest: 10, sets: 3, cycles: 8, intensity: nil)
-                WorkoutCard(date: "22.4.2022", workoutTime: 2000, exercise: 45, rest: 10, sets: 3, cycles: 8, intensity: .challenging)
-                WorkoutCard(date: "22.4.2022", workoutTime: 2000, exercise: 45, rest: 10, sets: 3, cycles: 8, intensity: nil)
-                WorkoutCard(date: "22.4.2022", workoutTime: 2000, exercise: 45, rest: 10, sets: 3, cycles: 8, intensity: .challenging)
-                WorkoutCard(date: "22.4.2022", workoutTime: 2000, exercise: 45, rest: 10, sets: 3, cycles: 8, intensity: nil)
-                WorkoutCard(date: "22.4.2022", workoutTime: 2000, exercise: 45, rest: 10, sets: 3, cycles: 8, intensity: .challenging)
-                WorkoutCard(date: "22.4.2022", workoutTime: 2000, exercise: 45, rest: 10, sets: 3, cycles: 8, intensity: nil)
+                ForEach(workouts) { workout in
+                    WorkoutCard(date: workout.date.formattedDate(), workoutTime: workout.workoutTime, exercise: workout.exercise, rest: workout.rest, sets: workout.sets, cycles: workout.cycles, intensity: Intensity(rawValue: workout.intensity))
+                }
             }
         }
         .background(Color(UIColor.secondarySystemBackground))
@@ -31,6 +27,6 @@ struct WorkoutHistoryScreen: View {
 
 struct WorkoutHistoryScreen_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutHistoryScreen()
+        WorkoutHistoryScreen(workouts: [])
     }
 }

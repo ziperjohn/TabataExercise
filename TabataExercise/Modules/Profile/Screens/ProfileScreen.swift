@@ -15,27 +15,31 @@ struct ProfileScreen: View {
             List {
                 // MARK: - Profile info section
 
-                Section {
-                    ProfileInfoCard(initial: User.MOCK_USER.initial, nickname: User.MOCK_USER.nickname, email: User.MOCK_USER.email)
+                if let user = state.currentUser {
+                    Section {
+                        ProfileInfoCard(initial: user.initial, nickname: user.nickname, email: user.email)
+                    }
                 }
 
                 // MARK: - Workout history section
 
-                Section {
-                    NavigationLink(destination: WorkoutHistoryScreen()) {
-                        HStack {
-                            Image(systemName: "trophy")
-                                .imageScale(.large)
-                                .foregroundColor(.orange)
-                            Text("Workout history")
-                            Spacer()
+                if let workouts = state.workouts {
+                    Section {
+                        NavigationLink(destination: WorkoutHistoryScreen(workouts: workouts)) {
+                            HStack {
+                                Image(systemName: "trophy")
+                                    .imageScale(.large)
+                                    .foregroundColor(.orange)
+                                Text("Workout history")
+                                Spacer()
+                            }
+                            .frame(height: 40)
                         }
-                        .frame(height: 40)
+                    } header: {
+                        Text("History")
+                    } footer: {
+                        Text("\(workouts.count) workouts")
                     }
-                } header: {
-                    Text("History")
-                } footer: {
-                    Text("45 workouts")
                 }
 
                 // MARK: - Account section

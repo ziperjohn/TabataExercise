@@ -50,9 +50,12 @@ struct TabataScreen: View {
 
             Spacer()
         }
-        .sheet(isPresented: state.$summarySheetIsShowed) {
+        .fullScreenCover(isPresented: state.$summarySheetIsShowed) {
             SummaryScreen()
         }
+//        .sheet(isPresented:  {
+//
+//        }
         .alert(isPresented: state.$alertDialogIsShowed) {
             Alert(
                 title: Text("Are you sure?"),

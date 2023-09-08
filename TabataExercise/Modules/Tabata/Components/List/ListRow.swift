@@ -35,7 +35,7 @@ struct ListRow: View {
                     .font(.subheadline)
             }
 
-            Image(systemName: "chevron.forward")
+            Image(systemName: "chevron.down")
                 .imageScale(.small)
                 .foregroundColor(.secondary.opacity(0.7))
         }

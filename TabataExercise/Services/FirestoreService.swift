@@ -53,4 +53,15 @@ class FirestoreService {
             throw error
         }
     }
+
+    func updateWorkoutArray(id: String, encodedWorkout: [String: Any]) async throws {
+        do {
+            try await self.userCollection?.document(id).updateData([
+                "workouts": FieldValue.arrayUnion([encodedWorkout])
+            ])
+        } catch {
+            Log.error("Faild to update workouts firestore with error: \(error.localizedDescription)")
+            throw error
+        }
+    }
 }

@@ -37,7 +37,7 @@ class UserObservableObject: ObservableObject {
             try await signUp(withEmail: email, password: password, nickname: nickname)
 
             if let id = userSession?.uid {
-                let user = User(id: id, nickname: nickname, email: email)
+                let user = User(id: id, nickname: nickname, email: email, workouts: [])
 
                 try await addUserToDB(user: user)
                 try await getUserFromDB()
@@ -117,13 +117,28 @@ class UserObservableObject: ObservableObject {
 
     // MARK: - Firestrore
 
-    private func getUserFromDB() async throws {
+    func getUserFromDB() async throws {
         do {
             if let id = userSession?.uid {
                 let snapshot = try await firestoreService.getUser(id: id)
 
                 currentUser = try snapshot.data(as: User.self)
+
+                Log.info("Get user")
             }
+        } catch {
+            throw error
+        }
+    }
+
+    func addWorkoutToDB(workout: Workout) async throws {
+        do {
+            let encodeWorkout = try Firestore.Encoder().encode(workout)
+
+            if let id = userSession?.uid {
+                try await firestoreService.updateWorkoutArray(id: id, encodedWorkout: encodeWorkout)
+            }
+
         } catch {
             throw error
         }

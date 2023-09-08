@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SummaryStateView: DynamicProperty {
+    @EnvironmentObject var userObject: UserObservableObject
     @EnvironmentObject var tabataObject: TabataObservableObject
 
     @State private(set) var intensitySheetIsShowed: Bool = false
@@ -37,15 +38,28 @@ struct SummaryStateView: DynamicProperty {
         }
     }
 
-    var formatedDate: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d.M.yyyy H:mm"
-        return formatter.string(from: date)
-    }
-
     // MARK: - Functions
 
     func showIntensitySheet() {
         intensitySheetIsShowed.toggle()
+    }
+
+    func summaryClosed() async throws {
+        let workout = Workout(workoutTime: workoutTime, exercise: tabataModel.exercise, rest: tabataModel.rest, sets: tabataModel.sets, cycles: tabataModel.cycles, date: date, intensity: intensity.rawValue)
+
+        do {
+            try await userObject.addWorkoutToDB(workout: workout)
+            try await userObject.getUserFromDB()
+        } catch {
+            Log.error(error.localizedDescription)
+        }
+    }
+}
+
+extension Date {
+    func formattedDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d.M.yyyy H:mm"
+        return formatter.string(from: self)
     }
 }

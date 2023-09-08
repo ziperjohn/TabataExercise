@@ -61,10 +61,11 @@
 		1E504D742AA4DFD200CA5EA3 /* StatisticsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D732AA4DFD200CA5EA3 /* StatisticsGrid.swift */; };
 		1E504D762AA4E46200CA5EA3 /* StatisticsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D752AA4E46200CA5EA3 /* StatisticsText.swift */; };
 		1E504D782AA4ED3B00CA5EA3 /* IntensityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D772AA4ED3B00CA5EA3 /* IntensityRow.swift */; };
-		1E504D7A2AA4EEEB00CA5EA3 /* SummaryTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D792AA4EEEB00CA5EA3 /* SummaryTitle.swift */; };
+		1E504D7A2AA4EEEB00CA5EA3 /* SummaryTitleWithCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D792AA4EEEB00CA5EA3 /* SummaryTitleWithCloseButton.swift */; };
 		1E504D7E2AA5A6C100CA5EA3 /* IntToTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D7D2AA5A6C100CA5EA3 /* IntToTimeString.swift */; };
-		1E74493D2AA9955B00F10395 /* tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E74493C2AA9955B00F10395 /* tick.mp3 */; };
 		1E74493F2AA9992800F10395 /* ProfileInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74493E2AA9992800F10395 /* ProfileInfoCard.swift */; };
+		1E7449412AA9BA5700F10395 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7449402AA9BA5700F10395 /* Workout.swift */; };
+		1E7449432AA9F7EC00F10395 /* tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E7449422AA9F7EC00F10395 /* tick.mp3 */; };
 		1E843A572A9F8A0F004E43D2 /* TabataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E843A562A9F8A0F004E43D2 /* TabataModel.swift */; };
 		1EAF810D2A9A3B40009DA4C3 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAF810C2A9A3B40009DA4C3 /* AlertMessage.swift */; };
 		1EAF810F2A9B9E11009DA4C3 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAF810E2A9B9E11009DA4C3 /* ProgressRing.swift */; };
@@ -138,10 +139,11 @@
 		1E504D732AA4DFD200CA5EA3 /* StatisticsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsGrid.swift; sourceTree = "<group>"; };
 		1E504D752AA4E46200CA5EA3 /* StatisticsText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsText.swift; sourceTree = "<group>"; };
 		1E504D772AA4ED3B00CA5EA3 /* IntensityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityRow.swift; sourceTree = "<group>"; };
-		1E504D792AA4EEEB00CA5EA3 /* SummaryTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTitle.swift; sourceTree = "<group>"; };
+		1E504D792AA4EEEB00CA5EA3 /* SummaryTitleWithCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTitleWithCloseButton.swift; sourceTree = "<group>"; };
 		1E504D7D2AA5A6C100CA5EA3 /* IntToTimeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntToTimeString.swift; sourceTree = "<group>"; };
-		1E74493C2AA9955B00F10395 /* tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tick.mp3; sourceTree = "<group>"; };
 		1E74493E2AA9992800F10395 /* ProfileInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCard.swift; sourceTree = "<group>"; };
+		1E7449402AA9BA5700F10395 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		1E7449422AA9F7EC00F10395 /* tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tick.mp3; sourceTree = "<group>"; };
 		1E843A562A9F8A0F004E43D2 /* TabataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataModel.swift; sourceTree = "<group>"; };
 		1EAF810C2A9A3B40009DA4C3 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		1EAF810E2A9B9E11009DA4C3 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				1E304E0A2A97D94500993394 /* User.swift */,
+				1E7449402AA9BA5700F10395 /* Workout.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,7 +380,7 @@
 				1E504D732AA4DFD200CA5EA3 /* StatisticsGrid.swift */,
 				1E504D752AA4E46200CA5EA3 /* StatisticsText.swift */,
 				1E504D772AA4ED3B00CA5EA3 /* IntensityRow.swift */,
-				1E504D792AA4EEEB00CA5EA3 /* SummaryTitle.swift */,
+				1E504D792AA4EEEB00CA5EA3 /* SummaryTitleWithCloseButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -439,7 +442,7 @@
 		1EED3E122AA61E1A008D05B5 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				1E74493C2AA9955B00F10395 /* tick.mp3 */,
+				1E7449422AA9F7EC00F10395 /* tick.mp3 */,
 				1E23A9582AA706A7001D5295 /* fanfare.mp3 */,
 				1E23A9592AA706A7001D5295 /* nextLevel.mp3 */,
 				1E23A95A2AA706A7001D5295 /* tada.mp3 */,
@@ -539,7 +542,7 @@
 				1EED3E142AA61E1A008D05B5 /* airhorn.mp3 in Resources */,
 				1E18FE2B2A96506C0061A9F5 /* Preview Assets.xcassets in Resources */,
 				1E2800A12A977E5000D302F9 /* GoogleService-Info.plist in Resources */,
-				1E74493D2AA9955B00F10395 /* tick.mp3 in Resources */,
+				1E7449432AA9F7EC00F10395 /* tick.mp3 in Resources */,
 				1E23A95C2AA706A7001D5295 /* fanfare.mp3 in Resources */,
 				1E23A95E2AA706A7001D5295 /* tada.mp3 in Resources */,
 				1E23A95F2AA706A7001D5295 /* yay.mp3 in Resources */,
@@ -567,7 +570,7 @@
 				1E39FF302A9D05040061E7E0 /* TimeSpinnerSelection.swift in Sources */,
 				1EED3E282AA63F74008D05B5 /* SoundsScreen.swift in Sources */,
 				1E304E092A97D50100993394 /* Log.swift in Sources */,
-				1E504D7A2AA4EEEB00CA5EA3 /* SummaryTitle.swift in Sources */,
+				1E504D7A2AA4EEEB00CA5EA3 /* SummaryTitleWithCloseButton.swift in Sources */,
 				1E304E1D2A98959400993394 /* TabataSettingsScreen.swift in Sources */,
 				1E3DF8FE2AA1D284002BAF96 /* ColoredRing.swift in Sources */,
 				1E843A572A9F8A0F004E43D2 /* TabataModel.swift in Sources */,
@@ -606,6 +609,7 @@
 				1E39FF2E2A9CFD120061E7E0 /* TabataPhase.swift in Sources */,
 				1E304E212A989A3B00993394 /* AuthService.swift in Sources */,
 				1E41BB702AA8ECB80084BB9A /* WorkoutHistoryScreen.swift in Sources */,
+				1E7449412AA9BA5700F10395 /* Workout.swift in Sources */,
 				1EC0A60B2AA4BC5D0008F3F3 /* SummaryScreen.swift in Sources */,
 				1E304E162A98947E00993394 /* TabataScreen.swift in Sources */,
 				1EAF81112A9B9E9D009DA4C3 /* Gradients.swift in Sources */,

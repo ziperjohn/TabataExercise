@@ -30,6 +30,10 @@ struct ProfileStateView: DynamicProperty {
         currentUser?.email
     }
 
+    var workouts: [Workout]? {
+        currentUser?.workouts
+    }
+
     // MARK: - Functions
 
     func showDeleteAccountAlert() {
