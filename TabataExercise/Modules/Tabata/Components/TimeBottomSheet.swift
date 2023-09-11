@@ -11,6 +11,7 @@ struct TimeSheet: View {
     @Binding var title: String
     @Binding var minutes: Int
     @Binding var seconds: Int
+    @Binding var isCountdown: Bool
 
     var body: some View {
         VStack(spacing: 5) {
@@ -24,7 +25,7 @@ struct TimeSheet: View {
 
             Divider()
 
-            TimeSpinnerSelection(minutes: $minutes, seconds: $seconds)
+            TimeSpinnerSelection(minutes: $minutes, seconds: $seconds, isCountdown: $isCountdown)
         }
         .padding(.vertical)
         .presentationDetents([.fraction(0.4)])
@@ -33,6 +34,6 @@ struct TimeSheet: View {
 
 struct TimeSheet_Previews: PreviewProvider {
     static var previews: some View {
-        TimeSheet(title: .constant("Exercise"), minutes: .constant(1), seconds: .constant(10))
+        TimeSheet(title: .constant("Exercise"), minutes: .constant(1), seconds: .constant(10), isCountdown: .constant(false))
     }
 }

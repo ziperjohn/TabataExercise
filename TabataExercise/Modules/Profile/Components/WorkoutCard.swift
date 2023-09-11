@@ -46,7 +46,7 @@ struct WorkoutCard: View {
                 }
             }
 
-            if let intensity = intensity {
+            if let intensity, intensity != .none {
                 Divider()
 
                 Text(intensity.rawValue)

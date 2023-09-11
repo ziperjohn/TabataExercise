@@ -42,21 +42,19 @@ struct TabataSettingsScreen: View {
             } header: {
                 Text("Sound effects")
             } footer: {
-                Text("On and off the sound effects application")
+                Text("Turn on and off the sound effects")
             }
 
-            if state.isSoundEnabled {
-                ListRowSound(selectedItem: state.$countdownSound, title: TabataPhase.countdown.rawValue, onChange: state.changeCountdownSound)
-                ListRowSound(selectedItem: state.$warmupSound, title: TabataPhase.warmup.rawValue, onChange: state.changeWarmupSound)
-                ListRowSound(selectedItem: state.$exerciseSound, title: TabataPhase.exercise.rawValue, onChange: state.changeExerciseSound)
-                ListRowSound(selectedItem: state.$restSound, title: TabataPhase.rest.rawValue, onChange: state.changeRestSound)
-                ListRowSound(selectedItem: state.$recoverySound, title: TabataPhase.recovery.rawValue, onChange: state.changeRecoverySound)
-                ListRowSound(selectedItem: state.$cooldownSound, title: TabataPhase.cooldown.rawValue, onChange: state.changeCooldownSound)
-                ListRowSound(selectedItem: state.$finishSound, title: TabataPhase.finished.rawValue, onChange: state.changefinishSound)
-            }
+            ListRowSound(selectedItem: state.$countdownSound, title: TabataPhase.countdown.rawValue, onChange: state.changeCountdownSound)
+            ListRowSound(selectedItem: state.$warmupSound, title: TabataPhase.warmup.rawValue, onChange: state.changeWarmupSound)
+            ListRowSound(selectedItem: state.$exerciseSound, title: TabataPhase.exercise.rawValue, onChange: state.changeExerciseSound)
+            ListRowSound(selectedItem: state.$restSound, title: TabataPhase.rest.rawValue, onChange: state.changeRestSound)
+            ListRowSound(selectedItem: state.$recoverySound, title: TabataPhase.recovery.rawValue, onChange: state.changeRecoverySound)
+            ListRowSound(selectedItem: state.$cooldownSound, title: TabataPhase.cooldown.rawValue, onChange: state.changeCooldownSound)
+            ListRowSound(selectedItem: state.$finishSound, title: TabataPhase.finished.rawValue, onChange: state.changefinishSound)
         }
         .sheet(isPresented: state.$timeSheetIsShowed, onDismiss: state.onTimeSheetDismiss) {
-            TimeSheet(title: state.$sheetTitle, minutes: state.$time.minutes, seconds: state.$time.seconds)
+            TimeSheet(title: state.$sheetTitle, minutes: state.$time.minutes, seconds: state.$time.seconds, isCountdown: state.$isCountdown)
         }
         .sheet(isPresented: state.$repeatsSheetIsShowed, onDismiss: state.onRepeatsSheetDismiss) {
             RepeatsSheet(title: state.$sheetTitle, repeats: state.$repeats)

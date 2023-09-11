@@ -10,7 +10,6 @@ import SwiftUI
 struct TabataScreen: View {
     let state = TabataStateView()
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var tabBarVisibility: Visibility = .visible
 
     var body: some View {
         NavigationStack {

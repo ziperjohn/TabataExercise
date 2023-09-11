@@ -13,6 +13,12 @@ struct IntensityScreen: View {
 
     var body: some View {
         VStack {
+            // MARK: - Drag indicator
+
+            Image(systemName: "chevron.compact.down")
+                .font(.title)
+                .foregroundColor(.secondary)
+
             Spacer()
 
             // MARK: - Title
@@ -53,7 +59,6 @@ struct IntensityScreen: View {
                 step: 1,
                 onEditingChanged: { _ in }
             )
-
             .accentColor(.orange)
 
             Spacer()

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TabataSettingsStateView: DynamicProperty {
     @EnvironmentObject var tabataObject: TabataObservableObject
-    
 
     @State private(set) var timeSheetIsShowed = false
     @State private(set) var repeatsSheetIsShowed = false
@@ -24,6 +23,7 @@ struct TabataSettingsStateView: DynamicProperty {
     @State private(set) var recoverySound: SoundEffect = .relax
     @State private(set) var cooldownSound: SoundEffect = .boxingBell
     @State private(set) var finishSound: SoundEffect = .trippleAirhorn
+    @State private(set) var isCountdown: Bool = false
 
     // MARK: - Variables
 
@@ -57,51 +57,54 @@ struct TabataSettingsStateView: DynamicProperty {
     }
 
     func onTimeSheetDismiss() {
+        isCountdown = false
+
         switch TabataPhase(rawValue: sheetTitle) {
             case .notStarted: break
-            case .countdown: tabataObject.tabataSettings.countdown = tuplesToSeconds()
-            case .warmup: tabataObject.tabataSettings.warmup = tuplesToSeconds()
-            case .exercise: tabataObject.tabataSettings.exercise = tuplesToSeconds()
-            case .rest: tabataObject.tabataSettings.rest = tuplesToSeconds()
-            case .recovery: tabataObject.tabataSettings.recovery = tuplesToSeconds()
-            case .cooldown: tabataObject.tabataSettings.cooldown = tuplesToSeconds()
+            case .countdown: tabataObject.tabataSettings.countdown = tupleToSeconds()
+            case .warmup: tabataObject.tabataSettings.warmup = tupleToSeconds()
+            case .exercise: tabataObject.tabataSettings.exercise = tupleToSeconds(minValueisOne: true)
+            case .rest: tabataObject.tabataSettings.rest = tupleToSeconds(minValueisOne: true)
+            case .recovery: tabataObject.tabataSettings.recovery = tupleToSeconds()
+            case .cooldown: tabataObject.tabataSettings.cooldown = tupleToSeconds()
             case .finished: break
             case .none: break
         }
     }
 
     func changeCountdown() {
-        time = secondsToTuples(seconds: tabataModel.countdown)
+        isCountdown = true
+        time = secondsToTuple(seconds: tabataModel.countdown)
         sheetTitle = TabataPhase.countdown.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeWarmup() {
-        time = secondsToTuples(seconds: tabataModel.warmup)
+        time = secondsToTuple(seconds: tabataModel.warmup)
         sheetTitle = TabataPhase.warmup.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeExercise() {
-        time = secondsToTuples(seconds: tabataModel.exercise)
+        time = secondsToTuple(seconds: tabataModel.exercise)
         sheetTitle = TabataPhase.exercise.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeRest() {
-        time = secondsToTuples(seconds: tabataModel.rest)
+        time = secondsToTuple(seconds: tabataModel.rest)
         sheetTitle = TabataPhase.rest.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeRecovery() {
-        time = secondsToTuples(seconds: tabataModel.recovery)
+        time = secondsToTuple(seconds: tabataModel.recovery)
         sheetTitle = TabataPhase.recovery.rawValue
         timeSheetIsShowed.toggle()
     }
 
     func changeCooldown() {
-        time = secondsToTuples(seconds: tabataModel.cooldown)
+        time = secondsToTuple(seconds: tabataModel.cooldown)
         sheetTitle = TabataPhase.cooldown.rawValue
         timeSheetIsShowed.toggle()
     }
@@ -150,12 +153,18 @@ struct TabataSettingsStateView: DynamicProperty {
         tabataObject.tabataSettings.isSoundEnabled = isSoundEnabled
     }
 
-    private func secondsToTuples(seconds: Int) -> (Int, Int) {
+    private func secondsToTuple(seconds: Int) -> (Int, Int) {
         return ((seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 
-    private func tuplesToSeconds() -> Int {
-        return (time.minutes * 60) + time.seconds
+    private func tupleToSeconds(minValueisOne: Bool = false) -> Int {
+        let seconds = (time.minutes * 60) + time.seconds
+
+        if seconds == 0 && minValueisOne {
+            return 1
+        } else {
+            return seconds
+        }
     }
 }
 

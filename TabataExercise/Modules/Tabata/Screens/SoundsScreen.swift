@@ -16,16 +16,9 @@ struct SoundsScreen: View {
             // MARK: - Sounds section
 
             Section("Select a sound") {
-                ListRowSelection(title: SoundEffect.airhorn, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.trippleAirhorn, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.beep, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.gooo, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.relax, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.boxingBell, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.fanfare, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.nextLevel, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.tada, selectedItem: $selectedItem)
-                ListRowSelection(title: SoundEffect.yay, selectedItem: $selectedItem)
+                ForEach(SoundEffect.allCases, id: \.rawValue) { item in
+                    ListRowSelection(title: item, selectedItem: $selectedItem)
+                }
             }
         }
         .navigationTitle("Sounds")

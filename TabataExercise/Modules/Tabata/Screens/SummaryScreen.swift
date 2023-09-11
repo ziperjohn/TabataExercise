@@ -29,7 +29,7 @@ struct SummaryScreen: View {
 
             // MARK: - Statistics grid
 
-            StatisticsGrid(workoutTime: state.workoutTime, exercise: state.tabataModel.exercise, rest: state.tabataModel.exercise, sets: state.tabataModel.sets, cycles: state.tabataModel.cycles)
+            StatisticsGrid(workoutTime: state.workoutTime, exercise: state.tabataModel.exercise, rest: state.tabataModel.rest, sets: state.tabataModel.sets, cycles: state.tabataModel.cycles)
 
             // MARK: - Intensity
 

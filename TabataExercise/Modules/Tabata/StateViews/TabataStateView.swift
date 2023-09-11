@@ -125,26 +125,51 @@ struct TabataStateView: DynamicProperty {
     private func switchTabataPhase() {
         switch tabataPhase {
         case .notStarted: setNewPhaseValues(newPhase: .countdown, phaseTime: tabataModel.countdown, sound: tabataModel.countdownSound)
-        case .countdown: setNewPhaseValues(newPhase: .warmup, phaseTime: tabataModel.warmup, sound: tabataModel.warmupSound)
+        case .countdown: moveFromCountdownTo()
         case .warmup: setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
         case .exercise: setNewPhaseValues(newPhase: .rest, phaseTime: tabataModel.rest, sound: tabataModel.restSound)
-        case .rest:
-            if currentSet < tabataModel.sets {
-                setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
-                currentSet += 1
-            } else if currentCycle <= tabataModel.cycles {
-                setNewPhaseValues(newPhase: .recovery, phaseTime: tabataModel.recovery, sound: tabataModel.recoverySound)
-            }
-        case .recovery:
-            if currentCycle == tabataModel.cycles {
-                setNewPhaseValues(newPhase: .cooldown, phaseTime: tabataModel.cooldown, sound: tabataModel.cooldownSound)
-            } else {
-                setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
-                currentCycle += 1
-                currentSet = 1
-            }
+        case .rest: moveFromRestTo()
+        case .recovery: moveFromRecoveryTo()
         case .cooldown: tabataPhase = .finished
         case .finished: break
+        }
+    }
+    
+    private func moveFromRestTo() {
+        if currentSet < tabataModel.sets {
+            setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
+            currentSet += 1
+        } else if currentCycle <= tabataModel.cycles {
+            if tabataModel.recovery == 0 && tabataModel.cooldown == 0 {
+                tabataPhase = .finished
+            } else if tabataModel.recovery == 0 {
+                setNewPhaseValues(newPhase: .cooldown, phaseTime: tabataModel.cooldown, sound: tabataModel.cooldownSound)
+            } else {
+                setNewPhaseValues(newPhase: .recovery, phaseTime: tabataModel.recovery, sound: tabataModel.recoverySound)
+            }
+        }
+    }
+    
+    private func moveFromRecoveryTo() {
+        if currentCycle == tabataModel.cycles {
+            if tabataModel.cooldown == 0 {
+                tabataPhase = .finished
+            } else {
+                setNewPhaseValues(newPhase: .cooldown, phaseTime: tabataModel.cooldown, sound: tabataModel.cooldownSound)
+            }
+          
+        } else {
+            setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
+            currentCycle += 1
+            currentSet = 1
+        }
+    }
+    
+    private func moveFromCountdownTo() {
+        if tabataModel.warmup == 0 {
+            setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
+        } else {
+            setNewPhaseValues(newPhase: .warmup, phaseTime: tabataModel.warmup, sound: tabataModel.warmupSound)
         }
     }
     
