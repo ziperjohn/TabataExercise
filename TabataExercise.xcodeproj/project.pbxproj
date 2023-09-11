@@ -200,7 +200,7 @@
 			children = (
 				1E23A9602AA72CD5001D5295 /* Info.plist */,
 				1EED3E122AA61E1A008D05B5 /* Sounds */,
-				1E304E242A98CFA400993394 /* Environment */,
+				1E304E242A98CFA400993394 /* Environments */,
 				1E304E1F2A989A2800993394 /* Services */,
 				1E18FE312A96521A0061A9F5 /* App */,
 				1E18FE332A9652350061A9F5 /* Utils */,
@@ -422,13 +422,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		1E304E242A98CFA400993394 /* Environment */ = {
+		1E304E242A98CFA400993394 /* Environments */ = {
 			isa = PBXGroup;
 			children = (
 				1E304E252A98CFD900993394 /* UserObservableObject.swift */,
 				1E39FF2B2A9CFCBF0061E7E0 /* TabataObservableObject.swift */,
 			);
-			path = Environment;
+			path = Environments;
 			sourceTree = "<group>";
 		};
 		1EAF810B2A9A337C009DA4C3 /* StateView */ = {
