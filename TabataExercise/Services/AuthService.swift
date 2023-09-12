@@ -15,7 +15,7 @@ class AuthService {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             return result.user
         } catch {
-            Log.error("Faild to sign in with error: \(error.localizedDescription)")
+            Log.error("Failed to sign in with error: \(error.localizedDescription)")
             throw error
         }
     }
@@ -25,7 +25,7 @@ class AuthService {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             return result.user
         } catch {
-            Log.error("Faild to sign up with error: \(error.localizedDescription)")
+            Log.error("Failed to sign up with error: \(error.localizedDescription)")
             throw error
         }
     }
@@ -34,7 +34,7 @@ class AuthService {
         do {
             try Auth.auth().signOut()
         } catch {
-            Log.error("Faild to sign out with error: \(error.localizedDescription)")
+            Log.error("Failed to sign out with error: \(error.localizedDescription)")
             throw error
         }
     }
@@ -43,7 +43,7 @@ class AuthService {
         do {
             try await Auth.auth().sendPasswordReset(withEmail: email)
         } catch {
-            Log.error("Faild to reset password with error: \(error.localizedDescription)")
+            Log.error("Failed to reset password with error: \(error.localizedDescription)")
             throw error
         }
     }
@@ -52,7 +52,7 @@ class AuthService {
         do {
             try await user.delete()
         } catch {
-            Log.error("Faild to delete user with error: \(error.localizedDescription)")
+            Log.error("Failed to delete user with error: \(error.localizedDescription)")
             throw error
         }
     }

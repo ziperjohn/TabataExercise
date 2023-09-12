@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PrimaryButton: View {
     let text: String
-    let icon: Image
+    let icon: String
     let action: () -> Void
     let isDisabled: Bool
 
@@ -19,7 +19,7 @@ struct PrimaryButton: View {
                 Text(text)
                     .font(.headline)
 
-                icon
+                Image(systemName: icon)
                     .font(.headline)
             }
         }
@@ -36,6 +36,6 @@ struct PrimaryButton: View {
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(text: "SIGN IN", icon: Image(systemName: "arrow.right.circle"), action: { print("Click") }, isDisabled: false)
+        PrimaryButton(text: "SIGN IN", icon: "arrow.right.circle", action: { print("Click") }, isDisabled: false)
     }
 }

@@ -35,11 +35,11 @@ struct TabataScreen: View {
             // MARK: - Buttons section
 
             HStack {
-                CircleButton(icon: Image(systemName: "stop"),
+                CircleButton(icon: "stop",
                              size: 75,
-                             action: { state.openAlertDialog() },
+                             action: state.openAlertDialog,
                              isDisabled: state.workoutState != .pause)
-                CircleButton(icon: Image(systemName: state.mainButtonIcon),
+                CircleButton(icon: state.mainButtonIcon,
                              size: 90,
                              action: { state.workoutState == .inactive ? state.startExercise() : state.workoutState == .pause ?
                                  state.resumeExercise() : state.pauseExercise()

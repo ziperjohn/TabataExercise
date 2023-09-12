@@ -28,13 +28,13 @@ struct SummaryStateView: DynamicProperty {
 
     var intensity: Intensity {
         switch intensityValue {
-            case 0: return Intensity.none
-            case 1: return Intensity.light
-            case 2: return Intensity.easy
-            case 3: return Intensity.moderate
-            case 4: return Intensity.challenging
-            case 5: return Intensity.hard
-            default: return Intensity.none
+            case 0: return .none
+            case 1: return .light
+            case 2: return .easy
+            case 3: return .moderate
+            case 4: return .challenging
+            case 5: return .hard
+            default: return .none
         }
     }
 

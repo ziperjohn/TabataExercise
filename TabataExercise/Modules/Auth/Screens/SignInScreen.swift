@@ -21,11 +21,11 @@ struct SignInScreen: View {
 
                 // Text inputs
 
-                TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: Image(systemName: "envelope"))
+                TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: "envelope")
                     .autocapitalization(.none)
 
                 ZStack(alignment: .trailing) {
-                    TextInput(text: state.$password, title: "Password", placeHolder: "Enter your password", icon: Image(systemName: "lock"), isSecureField: true)
+                    TextInput(text: state.$password, title: "Password", placeHolder: "Enter your password", icon: "lock", isSecureField: true)
 
                     NavigationLink(destination: ForgotPasswordScreen()) {
                         Text("FORGOT")
@@ -41,7 +41,7 @@ struct SignInScreen: View {
                 HStack {
                     Spacer()
                     PrimaryButton(text: "SIGN IN",
-                                  icon: Image(systemName: "arrow.right"),
+                                  icon: "arrow.right",
                                   action: { Task { try await state.signIn() } },
                                   isDisabled: !formIsValid)
                 }.padding(.horizontal)

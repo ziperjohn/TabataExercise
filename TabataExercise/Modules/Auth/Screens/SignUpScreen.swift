@@ -20,15 +20,15 @@ struct SignUpScreen: View {
 
             // Text inputs
 
-            TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: Image(systemName: "envelope"))
+            TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: "envelope")
                 .autocapitalization(.none)
 
-            TextInput(text: state.$nickname, title: "Nickname", placeHolder: "Enter your nickname", icon: Image(systemName: "person"))
+            TextInput(text: state.$nickname, title: "Nickname", placeHolder: "Enter your nickname", icon: "person")
 
-            TextInput(text: state.$password, title: "Password", placeHolder: "Enter your password", icon: Image(systemName: "lock"), isSecureField: true)
+            TextInput(text: state.$password, title: "Password", placeHolder: "Enter your password", icon: "lock", isSecureField: true)
 
             ZStack(alignment: .trailing) {
-                TextInput(text: state.$confirmPassword, title: "Confirm password", placeHolder: "Confirm your password", icon: Image(systemName: "lock"), isSecureField: true)
+                TextInput(text: state.$confirmPassword, title: "Confirm password", placeHolder: "Confirm your password", icon: "lock", isSecureField: true)
 
                 if !state.password.isEmpty && !state.confirmPassword.isEmpty {
                     if state.password == state.confirmPassword {
@@ -52,7 +52,7 @@ struct SignUpScreen: View {
             HStack {
                 Spacer()
                 PrimaryButton(text: "SIGN UP",
-                              icon: Image(systemName: "arrow.right"),
+                              icon: "arrow.right",
                               action: { Task { try await state.signUp() } },
                               isDisabled: !formIsValid)
             }.padding(.horizontal)

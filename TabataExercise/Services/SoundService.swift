@@ -21,7 +21,7 @@ class SoundService {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {
-            Log.error("Error playing sound with error: \(error.localizedDescription)")
+            Log.error("Failed playing sound with error: \(error.localizedDescription)")
         }
     }
 }

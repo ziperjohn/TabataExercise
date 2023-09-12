@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct CircleButton: View {
-    let icon: Image
+    let icon: String
     let size: CGFloat
     let action: () -> Void
     let isDisabled: Bool
+
     var body: some View {
-        Button(action: { action() }) {
-            icon
+        Button(action: action) {
+            Image(systemName: icon)
                 .font(.title)
                 .frame(width: size, height: size)
                 .foregroundColor(Color.white)
@@ -30,6 +31,6 @@ struct CircleButton: View {
 
 struct CircleButton_Previews: PreviewProvider {
     static var previews: some View {
-        CircleButton(icon: Image(systemName: "play"), size: 90, action: { print("Play") }, isDisabled: false)
+        CircleButton(icon: "play", size: 90, action: { print("Play") }, isDisabled: false)
     }
 }

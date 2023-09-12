@@ -11,7 +11,7 @@ struct TextInput: View {
     @Binding var text: String
     let title: String
     let placeHolder: String
-    let icon: Image
+    let icon: String
     var isSecureField = false
 
     var body: some View {
@@ -23,7 +23,7 @@ struct TextInput: View {
                 .padding(.leading, 20)
 
             HStack {
-                icon
+                Image(systemName: icon)
                     .font(.headline)
 
                 if isSecureField {
@@ -45,6 +45,6 @@ struct TextInput: View {
 
 struct TextInput_Previews: PreviewProvider {
     static var previews: some View {
-        TextInput(text: .constant(""), title: "Email", placeHolder: "name@example.com", icon: Image(systemName: "envelope"))
+        TextInput(text: .constant(""), title: "Email", placeHolder: "name@example.com", icon: "envelope")
     }
 }

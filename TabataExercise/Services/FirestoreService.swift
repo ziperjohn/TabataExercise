@@ -32,7 +32,7 @@ class FirestoreService {
 
             return snapshot
         } catch {
-            Log.error("Faild to get user document with error: \(error.localizedDescription)")
+            Log.error("Failed to get user document with error: \(error.localizedDescription)")
             throw error
         }
     }
@@ -41,7 +41,7 @@ class FirestoreService {
         do {
             try await self.userCollection?.document(id).setData(encodedUser)
         } catch {
-            Log.error("Faild to add user to firestore with error: \(error.localizedDescription)")
+            Log.error("Failed to add user to firestore with error: \(error.localizedDescription)")
             throw error
         }
     }
@@ -50,7 +50,7 @@ class FirestoreService {
         do {
             try await self.userCollection?.document(id).delete()
         } catch {
-            Log.error("Faild to delete user from firestore with error: \(error.localizedDescription)")
+            Log.error("Failed to delete user from firestore with error: \(error.localizedDescription)")
             throw error
         }
     }
@@ -61,7 +61,7 @@ class FirestoreService {
                 "workouts": FieldValue.arrayUnion([encodedWorkout])
             ])
         } catch {
-            Log.error("Faild to update workouts firestore with error: \(error.localizedDescription)")
+            Log.error("Failed to update workouts firestore with error: \(error.localizedDescription)")
             throw error
         }
     }

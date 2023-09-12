@@ -20,7 +20,7 @@ struct ForgotPasswordScreen: View {
 
             // Text inputs
 
-            TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: Image(systemName: "envelope"))
+            TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: "envelope")
                 .autocapitalization(.none)
 
             // Reset password button
@@ -28,7 +28,7 @@ struct ForgotPasswordScreen: View {
             HStack {
                 Spacer()
                 PrimaryButton(text: "Reset password",
-                              icon: Image(systemName: "arrow.right"),
+                              icon: "arrow.right",
                               action: { Task { try await state.resetPassword() } },
                               isDisabled: !formIsValid)
             }.padding(.horizontal)
