@@ -23,7 +23,7 @@
 		1E18FE452A9668980061A9F5 /* AuthTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE442A9668980061A9F5 /* AuthTitle.swift */; };
 		1E18FE4A2A966E700061A9F5 /* FotterNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E18FE492A966E700061A9F5 /* FotterNavigation.swift */; };
 		1E23A9552AA65480001D5295 /* ListRowSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E23A9542AA65480001D5295 /* ListRowSound.swift */; };
-		1E23A9572AA700B1001D5295 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E23A9562AA700B1001D5295 /* Sounds.swift */; };
+		1E23A9572AA700B1001D5295 /* SoundEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E23A9562AA700B1001D5295 /* SoundEffect.swift */; };
 		1E23A95C2AA706A7001D5295 /* fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E23A9582AA706A7001D5295 /* fanfare.mp3 */; };
 		1E23A95D2AA706A7001D5295 /* nextLevel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E23A9592AA706A7001D5295 /* nextLevel.mp3 */; };
 		1E23A95E2AA706A7001D5295 /* tada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E23A95A2AA706A7001D5295 /* tada.mp3 */; };
@@ -53,7 +53,6 @@
 		1E39FF302A9D05040061E7E0 /* TimeSpinnerSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39FF2F2A9D05040061E7E0 /* TimeSpinnerSelection.swift */; };
 		1E3DF8F82AA0BFEA002BAF96 /* TabataStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DF8F72AA0BFEA002BAF96 /* TabataStateView.swift */; };
 		1E3DF8FA2AA0C0BE002BAF96 /* WorkoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DF8F92AA0C0BE002BAF96 /* WorkoutState.swift */; };
-		1E3DF8FC2AA1CC46002BAF96 /* CircleSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DF8FB2AA1CC46002BAF96 /* CircleSettingsButton.swift */; };
 		1E3DF8FE2AA1D284002BAF96 /* ColoredRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DF8FD2AA1D284002BAF96 /* ColoredRing.swift */; };
 		1E41BB6E2AA8B96B0084BB9A /* WorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E41BB6D2AA8B96B0084BB9A /* WorkoutCard.swift */; };
 		1E41BB702AA8ECB80084BB9A /* WorkoutHistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E41BB6F2AA8ECB80084BB9A /* WorkoutHistoryScreen.swift */; };
@@ -63,6 +62,7 @@
 		1E504D782AA4ED3B00CA5EA3 /* IntensityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D772AA4ED3B00CA5EA3 /* IntensityRow.swift */; };
 		1E504D7A2AA4EEEB00CA5EA3 /* SummaryTitleWithCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D792AA4EEEB00CA5EA3 /* SummaryTitleWithCloseButton.swift */; };
 		1E504D7E2AA5A6C100CA5EA3 /* IntToTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E504D7D2AA5A6C100CA5EA3 /* IntToTimeString.swift */; };
+		1E6F0B4B2AB04A2900EA4CF6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6F0B4A2AB04A2900EA4CF6 /* Route.swift */; };
 		1E74493F2AA9992800F10395 /* ProfileInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74493E2AA9992800F10395 /* ProfileInfoCard.swift */; };
 		1E7449412AA9BA5700F10395 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7449402AA9BA5700F10395 /* Workout.swift */; };
 		1E7449432AA9F7EC00F10395 /* tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E7449422AA9F7EC00F10395 /* tick.mp3 */; };
@@ -104,7 +104,7 @@
 		1E18FE442A9668980061A9F5 /* AuthTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTitle.swift; sourceTree = "<group>"; };
 		1E18FE492A966E700061A9F5 /* FotterNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotterNavigation.swift; sourceTree = "<group>"; };
 		1E23A9542AA65480001D5295 /* ListRowSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowSound.swift; sourceTree = "<group>"; };
-		1E23A9562AA700B1001D5295 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		1E23A9562AA700B1001D5295 /* SoundEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffect.swift; sourceTree = "<group>"; };
 		1E23A9582AA706A7001D5295 /* fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fanfare.mp3; sourceTree = "<group>"; };
 		1E23A9592AA706A7001D5295 /* nextLevel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nextLevel.mp3; sourceTree = "<group>"; };
 		1E23A95A2AA706A7001D5295 /* tada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tada.mp3; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 		1E39FF2F2A9D05040061E7E0 /* TimeSpinnerSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpinnerSelection.swift; sourceTree = "<group>"; };
 		1E3DF8F72AA0BFEA002BAF96 /* TabataStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataStateView.swift; sourceTree = "<group>"; };
 		1E3DF8F92AA0C0BE002BAF96 /* WorkoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutState.swift; sourceTree = "<group>"; };
-		1E3DF8FB2AA1CC46002BAF96 /* CircleSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSettingsButton.swift; sourceTree = "<group>"; };
 		1E3DF8FD2AA1D284002BAF96 /* ColoredRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredRing.swift; sourceTree = "<group>"; };
 		1E41BB6D2AA8B96B0084BB9A /* WorkoutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCard.swift; sourceTree = "<group>"; };
 		1E41BB6F2AA8ECB80084BB9A /* WorkoutHistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryScreen.swift; sourceTree = "<group>"; };
@@ -141,6 +140,7 @@
 		1E504D772AA4ED3B00CA5EA3 /* IntensityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityRow.swift; sourceTree = "<group>"; };
 		1E504D792AA4EEEB00CA5EA3 /* SummaryTitleWithCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTitleWithCloseButton.swift; sourceTree = "<group>"; };
 		1E504D7D2AA5A6C100CA5EA3 /* IntToTimeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntToTimeString.swift; sourceTree = "<group>"; };
+		1E6F0B4A2AB04A2900EA4CF6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		1E74493E2AA9992800F10395 /* ProfileInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCard.swift; sourceTree = "<group>"; };
 		1E7449402AA9BA5700F10395 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		1E7449422AA9F7EC00F10395 /* tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tick.mp3; sourceTree = "<group>"; };
@@ -359,7 +359,7 @@
 				1E843A562A9F8A0F004E43D2 /* TabataSettings.swift */,
 				1E3DF8F92AA0C0BE002BAF96 /* WorkoutState.swift */,
 				1EC0A6102AA4CCC60008F3F3 /* Intensity.swift */,
-				1E23A9562AA700B1001D5295 /* Sounds.swift */,
+				1E23A9562AA700B1001D5295 /* SoundEffect.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,7 +375,6 @@
 				1E02A33A2A9DD0A9001D933C /* TimeBottomSheet.swift */,
 				1E02A33C2A9DDD0E001D933C /* RepeatsSpinnerSelection.swift */,
 				1E02A33E2A9DDED6001D933C /* RepeatsSheet.swift */,
-				1E3DF8FB2AA1CC46002BAF96 /* CircleSettingsButton.swift */,
 				1E3DF8FD2AA1D284002BAF96 /* ColoredRing.swift */,
 				1E504D732AA4DFD200CA5EA3 /* StatisticsGrid.swift */,
 				1E504D752AA4E46200CA5EA3 /* StatisticsText.swift */,
@@ -427,6 +426,7 @@
 			children = (
 				1E304E252A98CFD900993394 /* UserObservableObject.swift */,
 				1E39FF2B2A9CFCBF0061E7E0 /* TabataObservableObject.swift */,
+				1E6F0B4A2AB04A2900EA4CF6 /* Route.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -585,17 +585,17 @@
 				1E18FE4A2A966E700061A9F5 /* FotterNavigation.swift in Sources */,
 				1E304E232A989A4F00993394 /* FirestoreService.swift in Sources */,
 				1E18FE242A96506B0061A9F5 /* TabataExerciseApp.swift in Sources */,
-				1E23A9572AA700B1001D5295 /* Sounds.swift in Sources */,
+				1E23A9572AA700B1001D5295 /* SoundEffect.swift in Sources */,
 				1E18FE3A2A9652E30061A9F5 /* SignInScreen.swift in Sources */,
 				1E39FF2A2A9CED830061E7E0 /* ListRow.swift in Sources */,
 				1E41BB722AA8EE900084BB9A /* ListRowProfile.swift in Sources */,
 				1E02A33F2A9DDED6001D933C /* RepeatsSheet.swift in Sources */,
 				1E304E2E2A98E98500993394 /* ProfileStateView.swift in Sources */,
 				1E02A33B2A9DD0A9001D933C /* TimeBottomSheet.swift in Sources */,
-				1E3DF8FC2AA1CC46002BAF96 /* CircleSettingsButton.swift in Sources */,
 				1E504D782AA4ED3B00CA5EA3 /* IntensityRow.swift in Sources */,
 				1EED3E2C2AA6492C008D05B5 /* ListRowSelection.swift in Sources */,
 				1E304E262A98CFD900993394 /* UserObservableObject.swift in Sources */,
+				1E6F0B4B2AB04A2900EA4CF6 /* Route.swift in Sources */,
 				1EAF810F2A9B9E11009DA4C3 /* ProgressRing.swift in Sources */,
 				1EC0A6112AA4CCC60008F3F3 /* Intensity.swift in Sources */,
 				1E304E0B2A97D94500993394 /* User.swift in Sources */,

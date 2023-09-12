@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FotterNavigation: View {
-    let isSignInView: Bool
-
     @Environment(\.dismiss) var dismiss
+
+    let isSignInView: Bool
 
     var body: some View {
         if isSignInView {
@@ -39,7 +39,7 @@ struct FotterNavigation: View {
                         .foregroundColor(.orange)
                         .fontWeight(.heavy)
                 }
-                .font(.system(size: 14))
+                .font(.system(size: 15))
             }
         }
     }

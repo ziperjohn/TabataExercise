@@ -9,7 +9,6 @@ import Firebase
 import FirebaseFirestore
 import Foundation
 
-// TODO: Change
 enum FSError: Error {
     case invalidData
     case invalidResponse

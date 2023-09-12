@@ -11,8 +11,10 @@ struct TabataScreen: View {
     let state = TabataStateView()
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
+    @State private var stackPath: [Route] = []
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $stackPath) {
             // MARK: - Sets and cycles progress
 
             HStack(spacing: 100) {
@@ -39,13 +41,21 @@ struct TabataScreen: View {
                              size: 75,
                              action: state.openAlertDialog,
                              isDisabled: state.workoutState != .pause)
+
                 CircleButton(icon: state.mainButtonIcon,
                              size: 90,
                              action: { state.workoutState == .inactive ? state.startExercise() : state.workoutState == .pause ?
                                  state.resumeExercise() : state.pauseExercise()
                              },
                              isDisabled: false)
-                CircleSettingsButton(isDisabled: state.workoutState != .inactive)
+
+                CircleButton(icon: "gearshape",
+                             size: 75,
+                             action: { stackPath.append(.settings) },
+                             isDisabled: state.workoutState != .inactive)
+            }
+            .navigationDestination(for: Route.self) { _ in
+                TabataSettingsScreen()
             }
 
             Spacer()

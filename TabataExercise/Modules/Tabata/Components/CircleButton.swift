@@ -17,10 +17,11 @@ struct CircleButton: View {
         Button(action: action) {
             Image(systemName: icon)
                 .font(.title)
+                .foregroundColor(.white)
                 .frame(width: size, height: size)
-                .foregroundColor(Color.white)
                 .background(
-                    LinearGradient(gradient: Gradient(colors: [.yellow, .orange]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    LinearGradient(gradient: Gradient(colors: [.yellow, .orange]),
+                                   startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
                 .clipShape(Circle())
                 .opacity(isDisabled ? 0.5 : 1.0)

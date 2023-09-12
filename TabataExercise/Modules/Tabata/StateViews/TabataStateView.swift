@@ -31,7 +31,7 @@ struct TabataStateView: DynamicProperty {
     }
     
     var workoutTime: Int {
-        tabataObject.workoutTime + tabataModel.countdown - 1
+        tabataObject.workoutTime - 1
     }
     
     var totalProgressIncrementPart: Double {
@@ -102,24 +102,17 @@ struct TabataStateView: DynamicProperty {
         }
         
         animationDuration = 1.0
-        totalProgress += totalProgressIncrementPart
         phaseProgress += phaseProgressIncrementPart
-        exerciseTime += 1
         phaseTimeLeft -= 1
+        
+        if tabataPhase != .countdown {
+            totalProgress += totalProgressIncrementPart
+            exerciseTime += 1
+        }
         
         if phaseTimeLeft <= 0 {
             switchTabataPhase()
         }
-    }
-    
-    private func resetVariables() {
-        tabataPhase = .notStarted
-        phaseTimeLeft = 0
-        exerciseTime = 0
-        totalProgress = 0.0
-        phaseProgress = 0.0
-        currentSet = 0
-        currentCycle = 0
     }
     
     private func switchTabataPhase() {
@@ -157,7 +150,6 @@ struct TabataStateView: DynamicProperty {
             } else {
                 setNewPhaseValues(newPhase: .cooldown, phaseTime: tabataModel.cooldown, sound: tabataModel.cooldownSound)
             }
-          
         } else {
             setNewPhaseValues(newPhase: .exercise, phaseTime: tabataModel.exercise, sound: tabataModel.exerciseSound)
             currentCycle += 1
@@ -186,5 +178,15 @@ struct TabataStateView: DynamicProperty {
         guard tabataModel.isSoundEnabled else { return }
         
         SoundService.shared.playSound(sound)
+    }
+    
+    private func resetVariables() {
+        tabataPhase = .notStarted
+        phaseTimeLeft = 0
+        exerciseTime = 0
+        totalProgress = 0.0
+        phaseProgress = 0.0
+        currentSet = 0
+        currentCycle = 0
     }
 }
