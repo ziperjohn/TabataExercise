@@ -14,7 +14,7 @@ struct SignInStateView: DynamicProperty {
     @State var password = ""
     @State var errorMessage: String?
 
-    func signIn() async throws {
+    func signIn() async {
         do {
             errorMessage = nil
             try await userObject.signInAndGetUser(withEmail: email, password: password)

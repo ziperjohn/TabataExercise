@@ -14,14 +14,14 @@ struct ColoredRing: View {
     let animationDuration: Double
     var body: some View {
         ZStack {
-            // MARK: Ring placeholder
+            // MARK: - Ring placeholder
 
             Circle()
                 .stroke(lineWidth: 25)
                 .foregroundColor(.gray)
                 .opacity(0.1)
 
-            // MARK: Colored ring
+            // MARK: - Colored ring
 
             Circle()
                 .trim(from: 0, to: progress)

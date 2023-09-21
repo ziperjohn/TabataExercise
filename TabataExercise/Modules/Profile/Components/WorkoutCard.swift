@@ -31,11 +31,7 @@ struct WorkoutCard: View {
 
             Text("\(workoutTime.toTimeString())")
                 .font(.system(size: 50, weight: .heavy))
-                .foregroundStyle(LinearGradient(
-                    colors: [.yellow, .orange],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ))
+                .foregroundStyle(mainLinearGradient)
 
             Grid(alignment: .leading, horizontalSpacing: 35) {
                 GridRow {

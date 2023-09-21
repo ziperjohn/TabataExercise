@@ -16,7 +16,7 @@ struct SignUpStateView: DynamicProperty {
     @State var confirmPassword = ""
     @State var errorMessage: String?
 
-    func signUp() async throws {
+    func signUp() async {
         do {
             errorMessage = nil
             try await userObject.signUpAndCreateUser(withEmail: email, password: password, nickname: nickname)

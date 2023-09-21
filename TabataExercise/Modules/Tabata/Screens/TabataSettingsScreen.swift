@@ -15,12 +15,12 @@ struct TabataSettingsScreen: View {
             // MARK: - Times
 
             Section {
-                ListRow(value: state.$tabataObject.tabataSettings.countdown, title: TabataPhase.countdown.rawValue, action: state.changeCountdown, iconName: "stopwatch")
-                ListRow(value: state.$tabataObject.tabataSettings.warmup, title: TabataPhase.warmup.rawValue, action: state.changeWarmup, iconName: "flame")
-                ListRow(value: state.$tabataObject.tabataSettings.exercise, title: TabataPhase.exercise.rawValue, action: state.changeExercise, iconName: "dumbbell")
-                ListRow(value: state.$tabataObject.tabataSettings.rest, title: TabataPhase.rest.rawValue, action: state.changeRest, iconName: "heart")
-                ListRow(value: state.$tabataObject.tabataSettings.recovery, title: TabataPhase.recovery.rawValue, action: state.changeRecovery, iconName: "pause")
-                ListRow(value: state.$tabataObject.tabataSettings.cooldown, title: TabataPhase.cooldown.rawValue, action: state.changeCooldown, iconName: "snowflake")
+                ListRow(value: state.$tabataObject.tabataSettings.countdown, title: TabataPhase.countdown.rawValue, iconName: "stopwatch", action: state.changeCountdown)
+                ListRow(value: state.$tabataObject.tabataSettings.warmup, title: TabataPhase.warmup.rawValue, iconName: "flame", action: state.changeWarmup)
+                ListRow(value: state.$tabataObject.tabataSettings.exercise, title: TabataPhase.exercise.rawValue, iconName: "dumbbell", action: state.changeExercise)
+                ListRow(value: state.$tabataObject.tabataSettings.rest, title: TabataPhase.rest.rawValue, iconName: "heart", action: state.changeRest)
+                ListRow(value: state.$tabataObject.tabataSettings.recovery, title: TabataPhase.recovery.rawValue, iconName: "pause", action: state.changeRecovery)
+                ListRow(value: state.$tabataObject.tabataSettings.cooldown, title: TabataPhase.cooldown.rawValue, iconName: "snowflake", action: state.changeCooldown)
             } header: {
                 Text("Times")
             } footer: {
@@ -30,8 +30,8 @@ struct TabataSettingsScreen: View {
             // MARK: - Repeats
 
             Section("Repeats") {
-                ListRow(value: state.$tabataObject.tabataSettings.sets, title: "Sets", action: state.changeSets, iconName: "forward.end", convertToTime: false)
-                ListRow(value: state.$tabataObject.tabataSettings.cycles, title: "Cycles", action: state.changeCycles, iconName: "circle.hexagonpath", convertToTime: false)
+                ListRow(value: state.$tabataObject.tabataSettings.sets, title: "Sets", convertToTime: false, iconName: "forward.end", action: state.changeSets)
+                ListRow(value: state.$tabataObject.tabataSettings.cycles, title: "Cycles", convertToTime: false, iconName: "circle.hexagonpath", action: state.changeCycles)
             }
 
             // MARK: - Sound effects

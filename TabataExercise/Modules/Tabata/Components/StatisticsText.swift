@@ -15,11 +15,7 @@ struct StatisticsText: View {
         VStack(alignment: .leading) {
             Text(value)
                 .font(.system(size: 35, weight: .bold))
-                .foregroundStyle(LinearGradient(
-                    colors: [.yellow, .orange],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ))
+                .foregroundStyle(mainLinearGradient)
             Text(label)
                 .foregroundColor(.secondary)
         }

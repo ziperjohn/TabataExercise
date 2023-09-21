@@ -10,7 +10,9 @@ import SwiftUI
 
 struct TabataStateView: DynamicProperty {
     @EnvironmentObject var tabataObject: TabataObservableObject
+    @EnvironmentObject var coordinator: Coordinator
 
+    @State private(set) var isTabBarShowed: Visibility = .visible
     @State private(set) var alertDialogIsShowed: Bool = false
     @State private(set) var summarySheetIsShowed: Bool = false
     @State private(set) var workoutState: WorkoutState = .inactive
@@ -23,7 +25,7 @@ struct TabataStateView: DynamicProperty {
     @State private(set) var totalProgress: Double = 0.0
     @State private(set) var phaseProgress: Double = 0.0
     @State private(set) var animationDuration: Double = 1.0
-    
+
     // MARK: - Variables
     
     var tabataModel: TabataSettings {
@@ -54,6 +56,26 @@ struct TabataStateView: DynamicProperty {
     }
     
     // MARK: - Functions
+    
+    func showTabBar() {
+        if coordinator.stackPath.last == .settings {
+            isTabBarShowed = .hidden
+        } else if workoutState == .active {
+            isTabBarShowed = .hidden
+        } else {
+            isTabBarShowed = .visible
+        }
+    }
+    
+    func mainButtonAction() {
+        if workoutState == .inactive {
+            startExercise()
+        } else if workoutState == .pause {
+            resumeExercise()
+        } else {
+            pauseExercise()
+        }
+    }
     
     func startExercise() {
         Log.info("START")

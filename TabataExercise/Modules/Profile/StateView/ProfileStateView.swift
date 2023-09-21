@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProfileStateView: DynamicProperty {
     @EnvironmentObject private var userObject: UserObservableObject
+    @EnvironmentObject var coordinator: Coordinator
 
     @State private(set) var isDeleteAccountAlertShowed = false
     @State private(set) var isSignOutAlertShowed = false
@@ -44,7 +45,7 @@ struct ProfileStateView: DynamicProperty {
         isSignOutAlertShowed.toggle()
     }
 
-    func signOut() throws {
+    func signOut() {
         do {
             try userObject.signOut()
         } catch {
@@ -52,7 +53,7 @@ struct ProfileStateView: DynamicProperty {
         }
     }
 
-    func deleteUser() async throws {
+    func deleteUser() async {
         do {
             try await userObject.deleteUser()
         } catch {

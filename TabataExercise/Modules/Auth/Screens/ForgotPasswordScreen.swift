@@ -14,34 +14,34 @@ struct ForgotPasswordScreen: View {
         VStack(spacing: 25) {
             Spacer()
 
-            // Title
+            // MARK: - Title
 
             AuthTitle(title: "Forgot password", subtitle: "Please reset your password")
 
-            // Text inputs
+            // MARK: - Text inputs
 
             TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: "envelope")
                 .autocapitalization(.none)
 
-            // Reset password button
+            // MARK: - Reset password button
 
             HStack {
                 Spacer()
                 PrimaryButton(text: "Reset password",
                               icon: "arrow.right",
-                              action: { Task { try await state.resetPassword() } },
-                              isDisabled: !formIsValid)
+                              isDisabled: !formIsValid,
+                              action: { Task { await state.resetPassword() } })
             }.padding(.horizontal)
 
             Spacer()
 
-            // Message
+            // MARK: - Message
 
             if let message = state.message {
                 AlertMessage(text: message, color: .green)
             }
 
-            // Error message
+            // MARK: - Error message
 
             if let error = state.errorMessage {
                 AlertMessage(text: error, color: .red)

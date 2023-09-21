@@ -11,7 +11,7 @@ struct ProfileScreen: View {
     let state = ProfileStateView()
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: state.$coordinator.stackPath) {
             List {
                 // MARK: - Profile info section
 
@@ -25,16 +25,10 @@ struct ProfileScreen: View {
 
                 if let workouts = state.workouts {
                     Section {
-                        NavigationLink(destination: WorkoutHistoryScreen(workouts: workouts)) {
-                            HStack {
-                                Image(systemName: "trophy")
-                                    .imageScale(.large)
-                                    .foregroundColor(.orange)
-                                Text("Workout history")
-                                Spacer()
+                        ListRowProfile(title: "Workout history", icon: "trophy", value: nil, action: { state.coordinator.stackPath.append(.history) })
+                            .navigationDestination(for: Route.self) { _ in
+                                state.coordinator.workoutHistoryScreen(wokrouts: workouts)
                             }
-                            .frame(height: 40)
-                        }
                     } header: {
                         Text("History")
                     } footer: {
@@ -45,7 +39,7 @@ struct ProfileScreen: View {
                 // MARK: - Account section
 
                 Section("Account") {
-                    ListRowProfile(title: "Sign out", icon: "arrow.backward.circle", action: state.showSignOutAlert, value: nil)
+                    ListRowProfile(title: "Sign out", icon: "arrow.backward.circle", value: nil, action: state.showSignOutAlert)
                         .alert(isPresented: state.$isSignOutAlertShowed) {
                             Alert(
                                 title: Text("Are you sure?"),
@@ -53,12 +47,12 @@ struct ProfileScreen: View {
                                 primaryButton: .cancel(),
                                 secondaryButton: .destructive(
                                     Text("Sign out"),
-                                    action: { Task { try state.signOut() } }
+                                    action: { state.signOut() }
                                 )
                             )
                         }
 
-                    ListRowProfile(title: "Delete account", icon: "person.badge.minus", action: state.showDeleteAccountAlert, value: nil)
+                    ListRowProfile(title: "Delete account", icon: "person.badge.minus", value: nil, action: state.showDeleteAccountAlert)
                         .alert(isPresented: state.$isDeleteAccountAlertShowed) {
                             Alert(
                                 title: Text("Are you sure?"),
@@ -66,7 +60,7 @@ struct ProfileScreen: View {
                                 primaryButton: .cancel(),
                                 secondaryButton: .destructive(
                                     Text("Delete"),
-                                    action: { Task { try await state.deleteUser() }}
+                                    action: { Task { await state.deleteUser() }}
                                 )
                             )
                         }
@@ -76,7 +70,7 @@ struct ProfileScreen: View {
 
                 if let version = state.appVersion {
                     Section("General") {
-                        ListRowProfile(title: "App version", icon: "gear", action: {}, value: version)
+                        ListRowProfile(title: "App version", icon: "gear", value: version, action: {})
                     }
                 }
             }

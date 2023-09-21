@@ -26,6 +26,7 @@ struct TabataExerciseApp: App {
             ContentView()
                 .environmentObject(UserObservableObject(authService: AuthService(), firestoreService: FirestoreService()))
                 .environmentObject(TabataObservableObject())
+                .environmentObject(Coordinator())
         }
     }
 }

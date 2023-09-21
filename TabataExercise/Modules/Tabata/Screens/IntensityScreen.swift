@@ -33,21 +33,13 @@ struct IntensityScreen: View {
 
             Text("\(Int(intensityValue))")
                 .font(.system(size: 75, weight: .heavy))
-                .foregroundStyle(LinearGradient(
-                    colors: [.yellow, .orange],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ))
+                .foregroundStyle(mainLinearGradient)
 
             // MARK: - Intensity text
 
             Text(intensityText.rawValue)
                 .font(.largeTitle)
-                .foregroundStyle(LinearGradient(
-                    colors: [.yellow, .orange],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ))
+                .foregroundStyle(mainLinearGradient)
 
             Spacer()
 

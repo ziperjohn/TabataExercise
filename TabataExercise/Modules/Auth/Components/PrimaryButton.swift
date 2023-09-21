@@ -10,8 +10,8 @@ import SwiftUI
 struct PrimaryButton: View {
     let text: String
     let icon: String
-    let action: () -> Void
     let isDisabled: Bool
+    let action: () -> Void
 
     var body: some View {
         Button(action: action) {
@@ -25,9 +25,7 @@ struct PrimaryButton: View {
         }
         .padding()
         .foregroundColor(.white)
-        .background(
-            LinearGradient(gradient: Gradient(colors: [.yellow, .orange]), startPoint: .topLeading, endPoint: .bottomTrailing)
-        )
+        .background(mainLinearGradient)
         .cornerRadius(25)
         .opacity(isDisabled ? 0.5 : 1.0)
         .disabled(isDisabled)
@@ -36,6 +34,6 @@ struct PrimaryButton: View {
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(text: "SIGN IN", icon: "arrow.right.circle", action: { print("Click") }, isDisabled: false)
+        PrimaryButton(text: "SIGN IN", icon: "arrow.right.circle", isDisabled: false, action: { print("Click") })
     }
 }

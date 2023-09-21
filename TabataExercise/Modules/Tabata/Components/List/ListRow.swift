@@ -10,9 +10,9 @@ import SwiftUI
 struct ListRow: View {
     @Binding var value: Int
     let title: String
-    let action: () -> Void
-    let iconName: String?
     var convertToTime: Bool = true
+    let iconName: String?
+    let action: () -> Void
 
     var body: some View {
         HStack(spacing: 20) {
@@ -49,6 +49,6 @@ struct ListRow: View {
 
 struct ListRow_Previews: PreviewProvider {
     static var previews: some View {
-        ListRow(value: .constant(30), title: "Exercise", action: { print("Exercise") }, iconName: "dumbbell.fill")
+        ListRow(value: .constant(30), title: "Exercise", iconName: "dumbbell.fill", action: { print("Exercise") })
     }
 }

@@ -19,11 +19,7 @@ struct StatisticsGrid: View {
             VStack(alignment: .leading) {
                 Text("\(workoutTime.toTimeString())")
                     .font(.system(size: 70, weight: .heavy))
-                    .foregroundStyle(LinearGradient(
-                        colors: [.yellow, .orange],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ))
+                    .foregroundStyle(mainLinearGradient)
                 Text("Workout time")
                     .foregroundColor(.secondary)
             }

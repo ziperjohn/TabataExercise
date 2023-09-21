@@ -19,9 +19,7 @@ struct ProfileInfoCard: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
                 .frame(width: 72, height: 72)
-                .background(
-                    LinearGradient(gradient: Gradient(colors: [.yellow, .orange]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                )
+                .background(mainLinearGradient)
                 .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 4) {

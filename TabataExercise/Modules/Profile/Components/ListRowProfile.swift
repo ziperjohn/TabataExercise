@@ -10,8 +10,8 @@ import SwiftUI
 struct ListRowProfile: View {
     let title: String
     let icon: String
-    let action: () -> Void
     let value: String?
+    let action: () -> Void
 
     var body: some View {
         HStack {
@@ -37,6 +37,6 @@ struct ListRowProfile: View {
 
 struct ListRowProfile_Previews: PreviewProvider {
     static var previews: some View {
-        ListRowProfile(title: "App version", icon: "gear", action: { print("Click") }, value: "1.0.0")
+        ListRowProfile(title: "App version", icon: "gear", value: "1.0.0", action: { print("Click") })
     }
 }

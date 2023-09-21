@@ -15,11 +15,11 @@ struct SignInScreen: View {
             VStack(spacing: 25) {
                 Spacer()
 
-                // Title
+                // MARK: - Title
 
                 AuthTitle(title: "Sign in", subtitle: "Please sign in to continue")
 
-                // Text inputs
+                // MARK: - Text inputs
 
                 TextInput(text: state.$email, title: "Email", placeHolder: "name@example.com", icon: "envelope")
                     .autocapitalization(.none)
@@ -36,25 +36,25 @@ struct SignInScreen: View {
                     }
                 }
 
-                // Sign in button
+                // MARK: - Sign in button
 
                 HStack {
                     Spacer()
                     PrimaryButton(text: "SIGN IN",
                                   icon: "arrow.right",
-                                  action: { Task { try await state.signIn() } },
-                                  isDisabled: !formIsValid)
+                                  isDisabled: !formIsValid,
+                                  action: { Task { await state.signIn() }})
                 }.padding(.horizontal)
 
                 Spacer()
 
-                // Error message
+                // MARK: - Error message
 
                 if let error = state.errorMessage {
                     AlertMessage(text: error, color: .red)
                 }
 
-                // Sign up footer link
+                // MARK: - Sign up footer link
 
                 FotterNavigation(isSignInView: true)
             }

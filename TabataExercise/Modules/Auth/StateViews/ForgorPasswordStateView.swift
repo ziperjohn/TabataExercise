@@ -14,7 +14,7 @@ struct ForgotPasswordStateView: DynamicProperty {
     @State var message: String?
     @State var errorMessage: String?
 
-    func resetPassword() async throws {
+    func resetPassword() async {
         do {
             message = nil
             errorMessage = nil

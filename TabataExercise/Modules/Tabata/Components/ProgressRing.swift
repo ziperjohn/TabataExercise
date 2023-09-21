@@ -17,9 +17,15 @@ struct ProgressRing: View {
 
     var body: some View {
         ZStack {
+            // MARK: - Outer ring
+
             ColoredRing(progress: $totalProgress, size: 300, colors: blueGradient, animationDuration: 1.0)
 
+            // MARK: - Outer ring
+
             ColoredRing(progress: $phaseProgress, size: 253, colors: currentPhase == .exercise ? redGradient : greenGradient, animationDuration: animationDuration)
+
+            // MARK: - Times and current tabata phase
 
             VStack(spacing: 10) {
                 Text(currentPhase.rawValue)

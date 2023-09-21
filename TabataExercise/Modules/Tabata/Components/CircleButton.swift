@@ -10,8 +10,8 @@ import SwiftUI
 struct CircleButton: View {
     let icon: String
     let size: CGFloat
-    let action: () -> Void
     let isDisabled: Bool
+    let action: () -> Void
 
     var body: some View {
         Button(action: action) {
@@ -19,10 +19,7 @@ struct CircleButton: View {
                 .font(.title)
                 .foregroundColor(.white)
                 .frame(width: size, height: size)
-                .background(
-                    LinearGradient(gradient: Gradient(colors: [.yellow, .orange]),
-                                   startPoint: .topLeading, endPoint: .bottomTrailing)
-                )
+                .background(mainLinearGradient)
                 .clipShape(Circle())
                 .opacity(isDisabled ? 0.5 : 1.0)
         }
@@ -32,6 +29,6 @@ struct CircleButton: View {
 
 struct CircleButton_Previews: PreviewProvider {
     static var previews: some View {
-        CircleButton(icon: "play", size: 90, action: { print("Play") }, isDisabled: false)
+        CircleButton(icon: "play", size: 90, isDisabled: false, action: { print("Play") })
     }
 }

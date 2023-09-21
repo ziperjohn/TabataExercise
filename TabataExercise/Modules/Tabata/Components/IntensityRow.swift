@@ -10,6 +10,7 @@ import SwiftUI
 struct IntensityRow: View {
     let intensity: Intensity
     let action: () -> Void
+
     var body: some View {
         VStack {
             HStack {
